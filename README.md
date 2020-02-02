@@ -16,6 +16,10 @@
 
 ## 진행  
 
+# [**JUnit 연습하기**](https://code.visualstudio.com/docs/java/java-testing)  
+
+참고 : https://jojoldu.tistory.com/231  
+
 ### [입문 - 프로그래머스 이용하기](./programmers-coding-test)  
 
 > Codility의 연습문제를 먼저 이용해보려고 했으나, 영어 해석에 시간이 많이 소요될 것 같다.(...)  
@@ -29,7 +33,6 @@
 3. 손코딩 연습도 같이 한다.  
 
 4. 왜 이렇게 풀었는지 설명할 수 있도록  
-
 
 ### [기초 - Codility 이용하기](./codility-lessons)
 

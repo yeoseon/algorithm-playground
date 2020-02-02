@@ -8,13 +8,32 @@
 
 일단 Java.  
 
+## 알고리즘 정리  
+
+> 알고리즘 개념별로 푼 문제들을 디렉터리에 관계없이 정리한다.  
+
 ## 진행  
 
-### 기초 - Codiliy 이용하기  
+### [입문 - 프로그래머스 이용하기](./programmers-coding-test)  
+
+> Codility의 연습문제를 먼저 이용해보려고 했으나, 영어 해석에 시간이 많이 소요될 것 같다.(...)  
+
+[프로그래머스의 코딩테스트 고득점 Kit](https://programmers.co.kr/learn/challenges)에 있는 문제들을 먼저 모두 풀어본다. 
+
+1. 해당 주제에 대한 기초 내용을 [Hello Coding 그림으로 개념을 이해하는 알고리즘](http://www.hanbit.co.kr/store/books/look.php?p_code=B5896248244) 책을 통해 이해한다.  
+
+2. [프로그래머스의 코딩테스트 고득점 Kit](https://programmers.co.kr/learn/challenges)에 있는 문제들을 모두 풀어본다. 
+
+3. 손코딩 연습도 같이 한다.  
+
+4. 왜 이렇게 풀었는지 설명할 수 있도록  
+
+
+### [기초 - Codility 이용하기](./codility-lessons)
 
 [Codility의 연습문제](https://app.codility.com/programmers/lessons/1-iterations/)를 모두 풀어보는 것이 목표.  
 
-1. 해당 주제에 대한 기초 내용을 [Hello Coding 그림으로 개념을 이해하는 알고리즘](http://www.hanbit.co.kr/store/books/look.php?p_code=B5896248244) 책을 통해 이해한다.  
+1. 해당 주제에 대한 기초 내용을 Open reading material (PDF) 자료를 통해 읽는다. (영어 Document 읽는 연습이 되는 것은 덤)
 
 2. 많은 회사에서 코딩테스트로 이용하는 [Codility의 연습문제](https://app.codility.com/programmers/lessons/1-iterations/) 를 모두 풀어본다. (적어도 1시간 이상은 고민해본다.)  
 
@@ -31,7 +50,11 @@
 
 ### 알고리즘 문제풀이 사이트  
 
-
+* [BAEKJOON](https://www.acmicpc.net/)  
+질문을 할 수 있는 슬랙 채널도 있음.  
+* [프로그래머스](https://programmers.co.kr/learn/challenges)
+* [Algospot](https://www.algospot.com/)  
+대학생 때 많이 연습했던 사이트
 
 ### 책 추천  
 

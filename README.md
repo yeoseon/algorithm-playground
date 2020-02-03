@@ -6,17 +6,22 @@
 
 ## 사용 언어
 
-일단 Java.  
+Java 
 
-## 알고리즘 정리  
-
-1. 해시 알고리즘  
-
+## 목차
 > 알고리즘 개념별로 푼 문제들을 디렉터리에 관계없이 정리한다.  
+
+[개념 정리 모음]()  
+
+1. [빅오 표기법]()
+
+2. [해시 알고리즘]()  
+
+
 
 ## 진행  
 
-# [**JUnit 연습하기**](https://code.visualstudio.com/docs/java/java-testing)  
+### [**JUnit과 함께하기**](https://code.visualstudio.com/docs/java/java-testing)  
 
 참고 : https://jojoldu.tistory.com/231  
 

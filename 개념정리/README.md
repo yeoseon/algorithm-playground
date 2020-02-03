@@ -1,4 +1,4 @@
-# 빅오 표기법  (Git O notation)  
+# 빅오 표기법  (Big O notation)  
 
 알고리즘이 얼마나 빠른지 표시하는 방법  
 

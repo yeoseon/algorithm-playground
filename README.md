@@ -13,9 +13,8 @@ Java
 
 [개념 정리 모음](./%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC)  
 
-1. [빅오 표기법](./%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC#빅오-표기법)
-
-2. [해시 알고리즘](./%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC#해시-알고리즘)  
+1. [해시 알고리즘](./%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC#해시-알고리즘)  
+* [001. 완주하지 못한 선수](https://github.com/yeoseon/algorithm/blob/master/programmers-coding-test/001.java)  
 
 
 

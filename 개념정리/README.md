@@ -65,3 +65,8 @@ O(1)
 
 **좋은 해시함수란?**  
 * 배열에 값을 고루 분포시키는 함수
+
+
+# 스택과 큐  
+
+[Java에서의 스택과 큐](https://github.com/yeoseon/tip-archive/issues/97) 참고  

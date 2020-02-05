@@ -1,9 +1,12 @@
+package Samples;
+
 /**
  * 완주하지 못한 선수 문제의 모범답안 02 (해시 이용 X, sort 이용)
  */
 
 import java.util.*;
-class Solution {
+
+class Solution001Sample2 {
     public String solution(String[] participant, String[] completion) {
         Arrays.sort(participant);
         Arrays.sort(completion);

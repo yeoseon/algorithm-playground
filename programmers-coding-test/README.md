@@ -12,7 +12,8 @@
 
 4. 왜 이렇게 풀었는지 설명할 수 있도록  
 
-## 문제 풀이  
+## 문제 링크
 
-* [001. 완주하지 못한 선수](https://programmers.co.kr/learn/courses/30/lessons/42576?language=java)  
-
+[001. 완주하지 못한 선수](https://programmers.co.kr/learn/courses/30/lessons/42576?language=java)  
+[002. 탑](https://programmers.co.kr/learn/courses/30/lessons/42588)  
+[003. 더 맵게](https://programmers.co.kr/learn/courses/30/lessons/42626)  

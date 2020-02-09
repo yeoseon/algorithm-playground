@@ -19,6 +19,8 @@ Java
 2. [스택과 큐](./%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC#스택과-큐)  
 * [002. 탑](https://github.com/yeoseon/algorithm/blob/master/programmers-coding-test/002.java)  
 
+3. [힙](./%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC#힙)  
+* [003. 더 맵게](https://github.com/yeoseon/algorithm/blob/master/programmers-coding-test/003.java)  
 
 ## 진행  
 

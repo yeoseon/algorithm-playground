@@ -1,15 +1,7 @@
 import java.util.PriorityQueue;
 
-class Solution003 {
-
-    
-    public static void main(final String[] args) {
-
-        final int[] scoville = { 1, 2, 3, 9, 10, 12 };
-        
-    }
-
-    public int solution(int[] scoville, int K) {
+public class MoreSpicy {
+    public static int solution(int[] scoville, int K) {
         int answer = 0;
         PriorityQueue<Integer> heap = new PriorityQueue();
 
@@ -23,8 +15,6 @@ class Solution003 {
             }
             int a = heap.poll();
             int b = heap.poll();
-
-
             int result = a + (b * 2);
 
             heap.offer(result);

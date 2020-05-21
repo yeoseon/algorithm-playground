@@ -12,9 +12,9 @@ Java
 
 ### 문제 풀이  
 
-1. [완주하지 못한 선수 (해시 알고리즘)](https://github.com/yeoseon/algorithm/blob/master/IncompletePlayer.java)  
-2. [탑 (스택/큐)](https://github.com/yeoseon/algorithm/blob/master/Top.java)  
-3. [더 맵게 (힙)](https://github.com/yeoseon/algorithm/blob/master/MoreSpicy.java)  
+1. [완주하지 못한 선수 (해시 알고리즘)](https://github.com/yeoseon/algorithm/blob/master/src/IncompletePlayer.java)  
+2. [탑 (스택/큐)](https://github.com/yeoseon/algorithm/blob/master/src/Top.java)  
+3. [더 맵게 (힙)](https://github.com/yeoseon/algorithm/blob/master/src/MoreSpicy.java)  
 
 ### 개념 정리  
 

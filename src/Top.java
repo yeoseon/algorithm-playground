@@ -1,6 +1,13 @@
 import java.util.Stack;
 
+/**
+ * 탑
+ * https://programmers.co.kr/learn/courses/30/lessons/42588
+ *
+ * 스택/큐
+ */
 public class Top {
+
     public static int[] solution(final int[] heights) {
         final int[] answer = new int[heights.length];
         final Stack<Integer> stack = new Stack<>();

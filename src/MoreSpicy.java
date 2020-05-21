@@ -1,6 +1,12 @@
 import java.util.PriorityQueue;
-
+/**
+ * 더 맵게
+ * https://programmers.co.kr/learn/courses/30/lessons/42626
+ *
+ * 힙(Heap)
+ */
 public class MoreSpicy {
+
     public static int solution(int[] scoville, int K) {
         int answer = 0;
         PriorityQueue<Integer> heap = new PriorityQueue();

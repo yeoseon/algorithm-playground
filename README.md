@@ -9,65 +9,44 @@
 Java 
 
 ## 목차
-> 알고리즘 개념별로 푼 문제들을 디렉터리에 관계없이 정리한다.  
+
+### 문제 풀이  
+
+1. [완주하지 못한 선수 (해시 알고리즘)](https://github.com/yeoseon/algorithm/blob/master/IncompletePlayer.java)  
+2. [탑 (스택/큐)](https://github.com/yeoseon/algorithm/blob/master/Top.java)  
+3. [더 맵게 (힙)](https://github.com/yeoseon/algorithm/blob/master/MoreSpicy.java)  
+
+### 개념 정리  
 
 [개념 정리 모음](./%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC)  
-
 1. [해시 알고리즘](./%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC#해시-알고리즘)  
-* [001. 완주하지 못한 선수](https://github.com/yeoseon/algorithm/blob/master/programmers-coding-test/001.java)  
-
 2. [스택과 큐](./%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC#스택과-큐)  
-* [002. 탑](https://github.com/yeoseon/algorithm/blob/master/programmers-coding-test/002.java)  
-
 3. [힙](./%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC#힙)  
-* [003. 더 맵게](https://github.com/yeoseon/algorithm/blob/master/programmers-coding-test/003.java)  
 
 ## 진행  
 
-### [**JUnit과 함께하기**](https://code.visualstudio.com/docs/java/java-testing)  
+### 입문 - 프로그래머스 이용하기  
 
-참고 : https://jojoldu.tistory.com/231  
+[프로그래머스의 코딩테스트 고득점 Kit](https://programmers.co.kr/learn/challenges)
 
-### [입문 - 프로그래머스 이용하기](./programmers-coding-test)  
+[Hello Coding 그림으로 개념을 이해하는 알고리즘](http://www.hanbit.co.kr/store/books/look.php?p_code=B5896248244) 
 
-> Codility의 연습문제를 먼저 이용해보려고 했으나, 영어 해석에 시간이 많이 소요될 것 같다.(...)  
+### 기초 - Codility 이용하기
 
-[프로그래머스의 코딩테스트 고득점 Kit](https://programmers.co.kr/learn/challenges)에 있는 문제들을 먼저 모두 풀어본다. 
+[Codility의 연습문제](https://app.codility.com/programmers/lessons/1-iterations/)
 
-1. 해당 주제에 대한 기초 내용을 [Hello Coding 그림으로 개념을 이해하는 알고리즘](http://www.hanbit.co.kr/store/books/look.php?p_code=B5896248244) 책을 통해 이해한다.  
+### 습관 들이기 - 알고리즘 사이트 이용하기   
 
-2. [프로그래머스의 코딩테스트 고득점 Kit](https://programmers.co.kr/learn/challenges)에 있는 문제들을 모두 풀어본다. 
-
-3. 손코딩 연습도 같이 한다.  
-
-4. 왜 이렇게 풀었는지 설명할 수 있도록  
-
-### [기초 - Codility 이용하기](./codility-lessons)
-
-[Codility의 연습문제](https://app.codility.com/programmers/lessons/1-iterations/)를 모두 풀어보는 것이 목표.  
-
-1. 해당 주제에 대한 기초 내용을 Open reading material (PDF) 자료를 통해 읽는다. (영어 Document 읽는 연습이 되는 것은 덤)
-
-2. 많은 회사에서 코딩테스트로 이용하는 [Codility의 연습문제](https://app.codility.com/programmers/lessons/1-iterations/) 를 모두 풀어본다. (적어도 1시간 이상은 고민해본다.)  
-
-3. 손코딩 연습도 같이 한다.  
-
-4. 왜 이렇게 풀었는지 설명할 수 있도록  
-
-
-### 습관 들이기 - 알고리즘 사이트 이용하기  
-
-1. 여러 알고리즘 사이트에 있는 문제들을 자주 풀어본다. (아래의 알고리즘 문제 사이트 참고)  
+* [BAEKJOON](https://www.acmicpc.net/)  
+* [프로그래머스](https://programmers.co.kr/learn/challenges)
+* [Algospot](https://www.algospot.com/)  
 
 ## Reference  
 
-### 알고리즘 문제풀이 사이트  
+### 코딩테스트에 자주 나오는 알고리즘  
 
-* [BAEKJOON](https://www.acmicpc.net/)  
-질문을 할 수 있는 슬랙 채널도 있음.  
-* [프로그래머스](https://programmers.co.kr/learn/challenges)
-* [Algospot](https://www.algospot.com/)  
-대학생 때 많이 연습했던 사이트
+* 분할 정복  
+* 동적계획법  
 
 ### 책 추천  
 
@@ -80,9 +59,3 @@ Java
 
 * [알고리즘 문제 해결 전략](https://book.naver.com/bookdb/book_detail.nhn?bid=7058764)  
 국민 알고리즘 책  
-
-
-### 코딩테스트에 자주 나오는 알고리즘  
-
-* 분할 정복  
-* 동적계획법  

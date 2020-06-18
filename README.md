@@ -17,8 +17,10 @@ Java
 3. [더 맵게 (힙)](https://github.com/yeoseon/algorithm/blob/master/src/MoreSpicy.java)  
 4. [K번째 수 (정렬)](https://github.com/yeoseon/algorithm/blob/master/src/KthNumber.java)  
 - [문제 링크](https://programmers.co.kr/learn/courses/30/lessons/42748)  
-### 개념 정리  
+5. [모의고사(완전탐색)](https://github.com/yeoseon/algorithm/blob/master/src/MockExam.java)
+- [문제 링크](https://programmers.co.kr/learn/courses/30/lessons/42840)  
 
+### 개념 정리  
 [개념 정리 모음](./%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC)  
 1. [해시 알고리즘](./%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC#해시-알고리즘)  
 2. [스택과 큐](./%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC#스택과-큐)  

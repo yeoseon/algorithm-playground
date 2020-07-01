@@ -10,7 +10,7 @@ Java
 
 ## 목차
 
-### 문제 풀이  
+### 문제 풀이 ([Sample 답안](https://github.com/yeoseon/algorithm/blob/master/src/Sample))
 
 1. [완주하지 못한 선수 (해시 알고리즘)](https://github.com/yeoseon/algorithm/blob/master/src/IncompletePlayer.java)  
 2. [탑 (스택/큐)](https://github.com/yeoseon/algorithm/blob/master/src/Top.java)  

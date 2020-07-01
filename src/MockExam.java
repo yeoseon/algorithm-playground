@@ -121,10 +121,10 @@ public class MockExam {
             if(countResult[i] == maxCount) {
                 //배열 길이 늘려서 넣기
                 if(result.length < index + 1) {
-                    int[] tempResult = new int[result.length + index + 1];
-                    tempResult[result.length + index] = i + 1;
+                    int[] tempResult = new int[result.length + 1];
+                    System.arraycopy(result, 0, tempResult, 0, result.length);
+                    tempResult[tempResult.length - 1] = i + 1;
                     result = tempResult;
-
                     index++;
                 }
             }

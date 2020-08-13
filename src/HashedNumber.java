@@ -4,7 +4,7 @@
  */
 public class HashedNumber {
 
-    public boolean solution(int x) {
+    public static boolean solution(int x) {
         boolean answer = true;
         return answer;
     }

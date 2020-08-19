@@ -10,9 +10,9 @@ public class HashedNumberTest {
         int x2 = 12;
         int x3 = 11;
         int x4 = 13;
-        HashedNumber.solution(x1);
-        HashedNumber.solution(x2);
-        HashedNumber.solution(x3);
-        HashedNumber.solution(x4);
+        assertThat(HashedNumber.solution(x1)).isTrue();
+        assertThat(HashedNumber.solution(x2)).isTrue();
+        assertThat(HashedNumber.solution(x3)).isFalse();
+        assertThat(HashedNumber.solution(x4)).isFalse();
     }
 }

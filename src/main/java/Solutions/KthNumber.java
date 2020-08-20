@@ -1,3 +1,5 @@
+package Solutions;
+
 import java.util.Arrays;
 
 public class KthNumber {

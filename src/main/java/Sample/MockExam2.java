@@ -1,8 +1,5 @@
 package Sample;
 
-import java.util.*;
-
-
 class MockExam2 {
     public int[] solution(int[] answers) {
         int[] arr = new int[3];

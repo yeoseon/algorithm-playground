@@ -2,3 +2,9 @@
 .idea
 out
 .iml
+.gradle
+gradle
+algorithm.iml
+gradlew
+gradlew.bat
+build

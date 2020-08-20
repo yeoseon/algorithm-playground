@@ -1,3 +1,5 @@
+package Solutions;
+
 import java.util.PriorityQueue;
 /**
  * 더 맵게

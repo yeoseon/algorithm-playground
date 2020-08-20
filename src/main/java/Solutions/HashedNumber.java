@@ -1,3 +1,5 @@
+package Solutions;
+
 /**
  * 하샤드 수
  * https://school.programmers.co.kr/courses/10586/lessons/67676?language=java

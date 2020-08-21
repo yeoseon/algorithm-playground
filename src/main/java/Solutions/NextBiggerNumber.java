@@ -87,4 +87,16 @@ public class NextBiggerNumber {
 
         return count;
     }
+
+    /*
+     * Shift 연산으로 bitCount를 구하는 방법
+     */
+    private static int bitCount(int n) {
+        int cnt = 0;
+        while(n > 0) {
+            if((n & 1) == 1) cnt++;
+            n >>= 1;
+        }
+        return cnt;
+    }
 }

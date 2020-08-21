@@ -55,4 +55,36 @@ public class NextBiggerNumber {
 
         return count;
     }
+
+    /**
+     * 꼭 알아야 사용할 수 있는 API나, 연산 시간이 효율적이지는 않은 String을 사용하지 않고
+     * Integer를 활용해서 풀어보자.
+     * 하샤드수에서 숫자를 이용해 자릿수를 구했던 방법을 생각해보자.
+     *
+     * n을 2로 계속 나누면서 1의 Count를 센다. - private 메소드 분리
+     * n+1또한 나누면서 1의 Count를 센다.
+     */
+    public static int solution3(int n) {
+        int nextBigNumber = n + 1;
+
+        while(getCountOne(n) != getCountOne(nextBigNumber)) {
+            nextBigNumber++;
+        }
+
+        return nextBigNumber;
+    }
+
+    private static int getCountOne(int n) {
+        // 기본형 자료형은 call by value이기 떄문에 copy가 필요 없다.
+        int count = 0;
+
+        while(n > 0) {
+            if(n % 2 == 1) {
+                count++;
+            }
+            n = n / 2;
+        }
+
+        return count;
+    }
 }

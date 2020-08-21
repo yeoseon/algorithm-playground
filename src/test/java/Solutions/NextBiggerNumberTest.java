@@ -9,8 +9,15 @@ public class NextBiggerNumberTest {
 
     @Test
     @DisplayName("n의 다음 큰 숫자를 반환한다.")
-    void solution() {
-        assertThat(NextBiggerNumber.solution(78)).isEqualTo(83);
-        assertThat(NextBiggerNumber.solution(15)).isEqualTo(23);
+    void solution1() {
+        assertThat(NextBiggerNumber.solution1(78)).isEqualTo(83);
+        assertThat(NextBiggerNumber.solution1(15)).isEqualTo(23);
+    }
+
+    @Test
+    @DisplayName("n의 다음 큰 숫자를 반환한다.")
+    void solution2() {
+        assertThat(NextBiggerNumber.solution2(78)).isEqualTo(83);
+        assertThat(NextBiggerNumber.solution2(15)).isEqualTo(23);
     }
 }

@@ -19,6 +19,7 @@ Java
 5. [모의고사(완전탐색)](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/MockExam.java) - [문제 링크](https://programmers.co.kr/learn/courses/30/lessons/42840)  
 6. [하샤드 수](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/HashedNumber.java)  - [문제 링크](https://school.programmers.co.kr/courses/10586/lessons/67676?language=java)    
 7. [다음 큰 숫자](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/NextBiggerNumber.java) - [문제 링크](https://school.programmers.co.kr/courses/10586/lessons/67677)  
+8. [방문 길이](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/LengthOfVisit.java) - [문제 링크](https://school.programmers.co.kr/courses/10586/lessons/67679);  
 
 ### 개념 정리  
 [개념 정리 모음](./%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC)  

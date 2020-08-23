@@ -15,8 +15,8 @@ public class LengthOfVisit {
         }
 
         // 기존 Point에 pointToMove만큼 움직인 Point를 반환한다.
-        public Point getMovedPoint(Point pointToMove) {
-            return new Point(this.x + pointToMove.getX(), this.y + pointToMove.getY());
+        public Point getMovedPoint(int xToMove, int yToMove) {
+            return new Point(this.x + xToMove, this.y + yToMove);
         }
 
         private int getX() {
@@ -47,9 +47,10 @@ public class LengthOfVisit {
         public Point move(Point startPoint, String dir) {
             for(Direction direction : Direction.values()) {
                 if(direction.equals(dir)) {
-                    return startPoint.getMovedPoint(new Point(direction.x, direction.y));       //TODO: 왜 static?
+                    return startPoint.getMovedPoint(direction.x, direction.y);
                 }
             }
+            throw new IllegalArgumentException("적합하지 않은 Direction입니다.");
         }
 
     }

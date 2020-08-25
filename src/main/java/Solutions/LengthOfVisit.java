@@ -1,6 +1,7 @@
 package Solutions;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 public class LengthOfVisit {
@@ -14,8 +15,7 @@ public class LengthOfVisit {
             this.y = y;
         }
 
-        // 기존 Point에 pointToMove만큼 움직인 Point를 반환한다.
-        public Point getMovedPoint(int xToMove, int yToMove) {
+        public Point move(int xToMove, int yToMove) {
             int resultX = this.x;
             int resultY = this.y;
 
@@ -29,20 +29,26 @@ public class LengthOfVisit {
             return new Point(resultX, resultY);
         }
 
-        private int getX() {
-            return this.x;
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Point point = (Point) o;
+            return x == point.x &&
+                    y == point.y;
         }
 
-        private int getY() {
-            return this.y;
+        @Override
+        public int hashCode() {
+            return Objects.hash(x, y);
         }
     }
 
     public enum Direction {
-        UP("U", 0, 1),
-        DOWN("D", 0, -1),
-        RIGHT("R", 1, 0),
-        LEFT("L", 0, -1);
+        U("U", 0, 1),
+        D("D", 0, -1),
+        R("R", 1, 0),
+        L("L", 0, -1);
 
         private String dir;
         private int x;
@@ -54,16 +60,16 @@ public class LengthOfVisit {
             this.y = y;
         }
 
-        public Point move(Point startPoint, String dir) {
+        public Point move(Point startPoint) {
             for(Direction direction : Direction.values()) {
-                if(direction.equals(dir)) {
-                    return startPoint.getMovedPoint(direction.x, direction.y);
+                if(direction.dir.equals(dir)) {
+                    return startPoint.move(direction.x, direction.y);
                 }
             }
-            throw new IllegalArgumentException("적합하지 않은 Direction입니다.");
+            throw new IllegalArgumentException(dir + "은 적합하지 않은 Direction 입니다.");
         }
-
     }
+
     /**
      * 왔던 길을 중복하지 않도록 처리하기 위해서는, 현재의 Point 뿐만 아니라 그 전의 Point도 기억해야 한다.
      * Point 클래스를 만들어보자
@@ -77,19 +83,27 @@ public class LengthOfVisit {
      * 1. 입력받은 dirs를 ,로 split 하여 배열로 갖는다.
      * 2. for문을 돌며 Set에 경로를 저장한다.
      * 3. Set의 개수를 도출한다.
+     *
+     * 고민점: Point 객체는 new할 때마다 새로운 객체로 생성이 될 텐데.. Set에 저장한다고 해서 History 관리가 안될 것이다.
+     * 기본 자료형을 다뤄야 하나?
      */
     public int solution(String dirs) {
-        int answer = 0;
-
         String[] directions = dirs.split("");
         Set<Point[]> visitHistory = new HashSet<>();
 
-        Point zeroPoint = new Point(0, 0);
+        Point point = new Point(0, 0);
 
         for(int i = 0; i < directions.length; i++) {
-
+            Direction direction = Direction.valueOf(directions[i]);
+            saveVisitHistory(visitHistory, point, direction);
+            point = direction.move(point);
         }
 
-        return answer;
+        return visitHistory.size();
+    }
+
+    private void saveVisitHistory(Set<Point[]> visitHistory, Point point, Direction direction) {
+        Point[] points = {point, direction.move(point)};
+        visitHistory.add(points);
     }
 }

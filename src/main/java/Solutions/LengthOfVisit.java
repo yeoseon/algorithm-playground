@@ -16,7 +16,17 @@ public class LengthOfVisit {
 
         // 기존 Point에 pointToMove만큼 움직인 Point를 반환한다.
         public Point getMovedPoint(int xToMove, int yToMove) {
-            return new Point(this.x + xToMove, this.y + yToMove);
+            int resultX = this.x;
+            int resultY = this.y;
+
+            if(Math.abs(this.x + xToMove) <= 5) {
+                resultX = this.x + xToMove;
+            }
+            if (Math.abs(this.y + yToMove) <= 5) {
+                resultY = this.y + yToMove;
+            }
+
+            return new Point(resultX, resultY);
         }
 
         private int getX() {

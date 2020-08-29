@@ -48,7 +48,7 @@ public class LengthOfVisit {
         U("U", 0, 1),
         D("D", 0, -1),
         R("R", 1, 0),
-        L("L", 0, -1);
+        L("L", -1, 0);
 
         private String dir;
         private int x;
@@ -86,6 +86,9 @@ public class LengthOfVisit {
      *
      * 고민점: Point 객체는 new할 때마다 새로운 객체로 생성이 될 텐데.. Set에 저장한다고 해서 History 관리가 안될 것이다.
      * 기본 자료형을 다뤄야 하나?
+     *
+     * 문제 1. : Point가 갱신되고 있지 않음
+     * Set 내부에서 Point[]를 모두 다른 객체로 취급하고 있음
      */
     public int solution(String dirs) {
         String[] directions = dirs.split("");
@@ -105,5 +108,6 @@ public class LengthOfVisit {
     private void saveVisitHistory(Set<Point[]> visitHistory, Point point, Direction direction) {
         Point[] points = {point, direction.move(point)};
         visitHistory.add(points);
+        points = null;
     }
 }

@@ -1,5 +1,6 @@
 package Solutions;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -44,6 +45,27 @@ public class LengthOfVisit {
         }
     }
 
+    public class Points {
+        Point[] points;
+
+        public Points(Point[] points) {
+            this.points = points;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Points points1 = (Points) o;
+            return Arrays.equals(points, points1.points);
+        }
+
+        @Override
+        public int hashCode() {
+            return Arrays.hashCode(points);
+        }
+    }
+
     public enum Direction {
         U("U", 0, 1),
         D("D", 0, -1),
@@ -70,29 +92,9 @@ public class LengthOfVisit {
         }
     }
 
-    /**
-     * 왔던 길을 중복하지 않도록 처리하기 위해서는, 현재의 Point 뿐만 아니라 그 전의 Point도 기억해야 한다.
-     * Point 클래스를 만들어보자
-     * Set을 이용하고, 이중 배열을 이용해보자. (?)
-     * 객체 지향적으로 개선해봐도 좋을 듯 하다.
-     * Enum을 활용하는 것도 해보자.
-     *
-     * U: y+1, D: y-1, R: x+1, L: x-1
-     * x,y 값의 절대값이 5보다 커지는 경우 이동하지 않는다.
-     *
-     * 1. 입력받은 dirs를 ,로 split 하여 배열로 갖는다.
-     * 2. for문을 돌며 Set에 경로를 저장한다.
-     * 3. Set의 개수를 도출한다.
-     *
-     * 고민점: Point 객체는 new할 때마다 새로운 객체로 생성이 될 텐데.. Set에 저장한다고 해서 History 관리가 안될 것이다.
-     * 기본 자료형을 다뤄야 하나?
-     *
-     * 문제 1. : Point가 갱신되고 있지 않음
-     * Set 내부에서 Point[]를 모두 다른 객체로 취급하고 있음
-     */
     public int solution(String dirs) {
         String[] directions = dirs.split("");
-        Set<Point[]> visitHistory = new HashSet<>();
+        Set<Points> visitHistory = new HashSet<>();
 
         Point point = new Point(0, 0);
 
@@ -105,9 +107,11 @@ public class LengthOfVisit {
         return visitHistory.size();
     }
 
-    private void saveVisitHistory(Set<Point[]> visitHistory, Point point, Direction direction) {
-        Point[] points = {point, direction.move(point)};
-        visitHistory.add(points);
-        points = null;
+    private void saveVisitHistory(Set<Points> visitHistory, Point point, Direction direction) {
+        if(!point.equals(direction.move(point))) {
+            Point[] points = {point, direction.move(point)};
+            visitHistory.add(new Points(points));
+            points = null;
+        }
     }
 }

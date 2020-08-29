@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class LengthOfVisit {
 
-    public class Point implements Comparable {
+    public class Point implements Comparable<Point> {
         int x;
         int y;
 
@@ -45,8 +45,16 @@ public class LengthOfVisit {
         }
 
         @Override
-        public int compareTo(Object o) {
-            return 0;
+        public int compareTo(Point point) {
+            if(this.x > point.x) {
+                return 1; // x에 대해서는 오름차순
+            }
+            else if(this.x == point.x) {
+                if(this.y < point.y) { // y에 대해서는 내림차순
+                    return 1;
+                }
+            }
+            return -1;
         }
     }
 

@@ -11,6 +11,6 @@ public class LengthOfVisitTest {
         LengthOfVisit instance = new LengthOfVisit();
         assertThat(instance.solution("ULURRDLLU")).isEqualTo(7);
         assertThat(instance.solution("LULLLLLLU")).isEqualTo(7);
-        assertThat(instance.solution("LRLRLRLRL")).isEqualTo(2);
+        assertThat(instance.solution("LRLRLRLRL")).isEqualTo(1);
     }
 }

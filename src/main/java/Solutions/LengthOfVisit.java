@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class LengthOfVisit {
 
-    public class Point {
+    public class Point implements Comparable {
         int x;
         int y;
 
@@ -42,6 +42,11 @@ public class LengthOfVisit {
         @Override
         public int hashCode() {
             return Objects.hash(x, y);
+        }
+
+        @Override
+        public int compareTo(Object o) {
+            return 0;
         }
     }
 

@@ -110,6 +110,8 @@ public class LengthOfVisit {
     private void saveVisitHistory(Set<Points> visitHistory, Point point, Direction direction) {
         if(!point.equals(direction.move(point))) {
             Point[] points = {point, direction.move(point)};
+            Arrays.sort(points);
+
             visitHistory.add(new Points(points));
             points = null;
         }

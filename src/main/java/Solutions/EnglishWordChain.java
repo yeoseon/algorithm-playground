@@ -94,13 +94,30 @@ public class EnglishWordChain {
                     .toArray(String[]::new);
         }
 
-        public List<Player> getPlayers() {
-            return players;
+
+        //TODO: Player로부터 와야한다. Play 함수 추가 필요
+        public void addWordHistory(String word) {
+            if(isCorrectWord(word)) {
+                wordHistory.add(word);
+            }
         }
 
         //TODO: 테스트용 Correct 판별 메소드
         public boolean isCorrectWordTest(List<String> wordHistory, String word) {
 
+            // 1. 끝말잇기 룰에 부합하는 지 검사
+            String tailCharacter = getTailCharacter(wordHistory);
+            if(!tailCharacter.equals(word.substring(0, 1))) {
+                return false;
+            }
+            // 2. 중복되는 단어가 불려졌는 지 검사
+            if(wordHistory.contains(word)) {
+                return false;
+            }
+            return true;
+        }
+
+        private boolean isCorrectWord(String word) {
             // 1. 끝말잇기 룰에 부합하는 지 검사
             String tailCharacter = getTailCharacter(wordHistory);
             if(!tailCharacter.equals(word.substring(0, 1))) {
@@ -119,9 +136,8 @@ public class EnglishWordChain {
             return lastWord.substring(lastWord.length() - 1, lastWord.length());
         }
 
-
-        public boolean isCorrectWord(String word) {
-            return true;
+        public List<Player> getPlayers() {
+            return players;
         }
 
         //TODO: Players라는 객체로 관리해도 되겠다.

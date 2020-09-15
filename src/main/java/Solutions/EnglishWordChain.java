@@ -60,7 +60,7 @@ public class EnglishWordChain {
         private int playerCount;        // 게임 참여 Player 수
         private String[] words;         // 전체 단어
         private List<Player> players;
-        private List<String> wordHistory;   // 제시한 단어 History;
+        private List<String> wordHistory = new ArrayList<>();   // 제시한 단어 History;
 
         public WordChainGame(int playerCount, String[] words) {
             this.playerCount = playerCount;
@@ -144,6 +144,10 @@ public class EnglishWordChain {
 
         private boolean isCorrectWord(String word) {
             // 1. 끝말잇기 룰에 부합하는 지 검사
+            if(wordHistory.size() < 1) {
+                return true;
+            }
+
             String tailCharacter = getTailCharacter(wordHistory);
             if(!tailCharacter.equals(word.substring(0, 1))) {
                 return false;

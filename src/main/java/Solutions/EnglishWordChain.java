@@ -34,6 +34,7 @@ public class EnglishWordChain {
     // 3. 보다 효율적으로 풀어낼 수 있는 로직 수정 (다른 사람의 로직 참고)
     // 4. Stream 사용 가능한 부분 사용
     // 5. 불 필요한 지역변수 및 소스코드는 없는지.. 여부 판단 하여 삭제
+    // 6. 주석 처리된 테스트코드를 먼저 보고, 삭제 하지 않고 유지할 수 있는 방법 없는 지 고민하고 Refactoring 하기
 
     public class Player {
         private int number;         // Player Number (start with 1)

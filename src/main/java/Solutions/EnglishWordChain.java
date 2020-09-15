@@ -27,6 +27,14 @@ public class EnglishWordChain {
         return game.play();
     }
 
+    //TODO: refactoring 하기 !
+    // 0. 테스트 코드 통과 여부 파악
+    // 1. 지역 변수들에 대해 접근자, static 여부 고민하고 설정해보기
+    // 2. Players 객체 생성
+    // 3. 보다 효율적으로 풀어낼 수 있는 로직 수정 (다른 사람의 로직 참고)
+    // 4. Stream 사용 가능한 부분 사용
+    // 5. 불 필요한 지역변수 및 소스코드는 없는지.. 여부 판단 하여 삭제
+
     public class Player {
         private int number;         // Player Number (start with 1)
         private String[] words;     // 가진 단어들
@@ -101,17 +109,19 @@ public class EnglishWordChain {
         public int[] play() {
             int[] result = {0, 0};
 
-            // TODO: Players가 한번씩 돌아가면서 얘기한다. - 객체로 분리된다면, Players 로 책임을 넘긴다.
-            for(Player player : players) {
-                if(!addWordHistory(player.sayWord())) {
-                    result[0] = player.getNumber();
-                    result[1] = player.getOrder();
+            while(wordHistory.size() <= words.length) {
+                // TODO: Players가 한번씩 돌아가면서 얘기한다. - 객체로 분리된다면, Players 로 책임을 넘긴다.
+                for(Player player : players) {
+                    if(!addWordHistory(player.sayWord())) {
+                        result[0] = player.getNumber();
+                        result[1] = player.getOrder();
 
-                    return result;
-                }
+                        return result;
+                    }
 
-                if(wordHistory.size() == words.length) {
-                    return result;
+                    if(wordHistory.size() == words.length) {
+                        return result;
+                    }
                 }
             }
 

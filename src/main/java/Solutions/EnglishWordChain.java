@@ -43,12 +43,17 @@ public class EnglishWordChain {
             this.order = 0;
         }
 
+        public String sayWord() {
+            order++;
+            return words[order - 1];
+        }
+
         public String[] getWords() {
             return words;
         }
 
         public int getOrder() {
-            return order;
+            return this.order;
         }
     }
 
@@ -94,6 +99,12 @@ public class EnglishWordChain {
                     .toArray(String[]::new);
         }
 
+        public void play() {
+
+            while(true) {
+
+            }
+        }
 
         //TODO: Player로부터 와야한다. Play 함수 추가 필요
         public void addWordHistory(String word) {
@@ -114,6 +125,7 @@ public class EnglishWordChain {
             if(wordHistory.contains(word)) {
                 return false;
             }
+
             return true;
         }
 
@@ -123,17 +135,19 @@ public class EnglishWordChain {
             if(!tailCharacter.equals(word.substring(0, 1))) {
                 return false;
             }
+
             // 2. 중복되는 단어가 불려졌는 지 검사
             if(wordHistory.contains(word)) {
                 return false;
             }
+
             return true;
         }
 
         private String getTailCharacter(List<String> wordHistory) {
             String lastWord = wordHistory.get(wordHistory.size() - 1);
 
-            return lastWord.substring(lastWord.length() - 1, lastWord.length());
+            return lastWord.substring(lastWord.length() - 1);
         }
 
         public List<Player> getPlayers() {

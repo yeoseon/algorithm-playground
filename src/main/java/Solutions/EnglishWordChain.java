@@ -137,22 +137,6 @@ public class EnglishWordChain {
             return false;
         }
 
-        //TODO: 테스트용 Correct 판별 메소드
-        public boolean isCorrectWordTest(List<String> wordHistory, String word) {
-
-            // 1. 끝말잇기 룰에 부합하는 지 검사
-            String tailCharacter = getTailCharacter(wordHistory);
-            if(!tailCharacter.equals(word.substring(0, 1))) {
-                return false;
-            }
-            // 2. 중복되는 단어가 불려졌는 지 검사
-            if(wordHistory.contains(word)) {
-                return false;
-            }
-
-            return true;
-        }
-
         private boolean isCorrectWord(String word) {
             // 1. 끝말잇기 룰에 부합하는 지 검사
             if(wordHistory.size() < 1) {
@@ -180,11 +164,6 @@ public class EnglishWordChain {
 
         public List<Player> getPlayers() {
             return players;
-        }
-
-        //TODO: Players라는 객체로 관리해도 되겠다.
-        public Player getPlayer(int number) {
-            return players.get(number - 1);
         }
     }
 }

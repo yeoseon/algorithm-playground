@@ -46,12 +46,17 @@ public class EnglishWordChain {
         public String[] getWords() {
             return words;
         }
+
+        public int getOrder() {
+            return order;
+        }
     }
 
     public class WordChainGame {
         private int playerCount;        // 게임 참여 Player 수
         private String[] words;         // 전체 단어
         private List<Player> players;
+        private List<String> wordHistory;   // 제시한 단어 History;
 
         public WordChainGame(int playerCount, String[] words) {
             this.playerCount = playerCount;
@@ -69,10 +74,11 @@ public class EnglishWordChain {
             return players;
         }
 
-        // TODO: 더 효율적으로 바꿀 수 있을 것 같다. (Stream을 이용할 수 있을 것 같다.)
         private String[] pickPlayerWords(int playerCount, int playerNumber, String[] entireWords) {
             List<String> words = new ArrayList<>();
 
+            // TODO: 더 효율적으로 바꿀 수 있을 것 같다. (Stream을 이용할 수 있을 것 같다.)
+            // TODO: While을 이용해도 될 거 같다.
             for(int i = 0; i < entireWords.length; i++) {
                 if(playerCount == playerNumber) {
                     if((i+1) % playerCount == 0) {
@@ -91,5 +97,21 @@ public class EnglishWordChain {
         public List<Player> getPlayers() {
             return players;
         }
+
+        //TODO: 테스트용 Correct 판별 메소드
+        public boolean isCorrectWordTest(List<String> wordHistory, String word) {
+            return true;
+        }
+
+        public boolean isCorrectWord(String word) {
+            return true;
+        }
+
+        //TODO: Players라는 객체로 관리해도 되겠다.
+        public Player getPlayer(int number) {
+            return players.get(number - 1);
+        }
+
+
     }
 }

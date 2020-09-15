@@ -166,4 +166,13 @@ public class EnglishWordChain {
             return players;
         }
     }
+
+    //TODO: 더 간단한 풀이 고민해보기
+    // 1. HashSet을 사용해볼 것 (contains.)
+    public int[] solution2(int n, String[] words) {
+        int[] result = {0, 0};
+
+
+        return result;
+    }
 }

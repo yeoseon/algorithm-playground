@@ -61,7 +61,7 @@ public class EnglishWordChainTest {
         String[] words = {"tank", "kick", "know", "wheel", "land", "dream", "mother", "robot", "tank"};
 
         String[] wordHistoryArray = {"tank", "kick", "know", "wheel", "land", "dream", "mother"};
-        List<String> wordHistory = Arrays.asList(words);
+        List<String> wordHistory = Arrays.asList(wordHistoryArray);
 
         EnglishWordChain.WordChainGame game = instance.makeGame(n, words);
 

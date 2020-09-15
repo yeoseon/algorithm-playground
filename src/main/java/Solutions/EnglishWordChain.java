@@ -100,8 +100,25 @@ public class EnglishWordChain {
 
         //TODO: 테스트용 Correct 판별 메소드
         public boolean isCorrectWordTest(List<String> wordHistory, String word) {
+
+            // 1. 끝말잇기 룰에 부합하는 지 검사
+            String tailCharacter = getTailCharacter(wordHistory);
+            if(!tailCharacter.equals(word.substring(0, 1))) {
+                return false;
+            }
+            // 2. 중복되는 단어가 불려졌는 지 검사
+            if(wordHistory.contains(word)) {
+                return false;
+            }
             return true;
         }
+
+        private String getTailCharacter(List<String> wordHistory) {
+            String lastWord = wordHistory.get(wordHistory.size() - 1);
+
+            return lastWord.substring(lastWord.length() - 1, lastWord.length());
+        }
+
 
         public boolean isCorrectWord(String word) {
             return true;
@@ -111,7 +128,5 @@ public class EnglishWordChain {
         public Player getPlayer(int number) {
             return players.get(number - 1);
         }
-
-
     }
 }

@@ -22,14 +22,9 @@ public class EnglishWordChain {
      * - 이를 위해 끝글자 및 history도 관리해야 한다.
      */
     public int[] solution(int n, String[] words) {
-        int[] answer = {0, 0};
-
         WordChainGame game = new WordChainGame(n, words);
-        return answer;
-    }
 
-    public WordChainGame makeGame(int n, String[] words) {
-        return new WordChainGame(n, words);
+        return game.play();
     }
 
     public class Player {
@@ -54,6 +49,10 @@ public class EnglishWordChain {
 
         public int getOrder() {
             return this.order;
+        }
+
+        public int getNumber() {
+            return this.number;
         }
     }
 
@@ -99,18 +98,32 @@ public class EnglishWordChain {
                     .toArray(String[]::new);
         }
 
-        public void play() {
+        public int[] play() {
+            int[] result = {0, 0};
 
-            while(true) {
+            // TODO: Players가 한번씩 돌아가면서 얘기한다. - 객체로 분리된다면, Players 로 책임을 넘긴다.
+            for(Player player : players) {
+                if(!addWordHistory(player.sayWord())) {
+                    result[0] = player.getNumber();
+                    result[1] = player.getOrder();
 
+                    return result;
+                }
+
+                if(wordHistory.size() == words.length) {
+                    return result;
+                }
             }
+
+            return result;
         }
 
-        //TODO: Player로부터 와야한다. Play 함수 추가 필요
-        public void addWordHistory(String word) {
+        public boolean addWordHistory(String word) {
             if(isCorrectWord(word)) {
                 wordHistory.add(word);
+                return true;
             }
+            return false;
         }
 
         //TODO: 테스트용 Correct 판별 메소드

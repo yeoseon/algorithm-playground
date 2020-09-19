@@ -24,7 +24,7 @@ public class EnglishWordChain {
             }
 
             if (passedWords.contains(nextWord) || beforeWord.charAt(beforeWord.length() - 1) != nextWord.charAt(0)) {
-                return new int[]{personNum, count};
+                return new int[]{personNum, personOrder};
             }
 
             beforeWord = nextWord;

@@ -1,7 +1,9 @@
 package Solutions;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * 영어 끝말잇기
@@ -167,12 +169,38 @@ public class EnglishWordChain {
         }
     }
 
-    //TODO: 더 간단한 풀이 고민해보기
-    // 1. HashSet을 사용해볼 것 (contains.)
+    /**
+     * 더 간단한 풀이. 객체 지향을 고려하지 말고 쭉 풀어본다.
+     * 입력받은 word를 for문을 돈다.
+     * person 별로 하나씩 단어를 말하고, 이는 HashSet에 들어간다.
+     * word 순서를 1부터 시작하여, person 수로 나눈 나머지가 0일 경우 게임 라운드는 +1이 된다.
+     * @param n
+     * @param words
+     * @return
+     */
     public int[] solution2(int n, String[] words) {
-        int[] result = {0, 0};
+        int playerNumber = 1;
+        int ground = 1;
+        Set<String> wordHistory = new HashSet<>();
+        String beforeWord = words[0];
 
+        for(int i = 1; i < words.length; i++) {
+            wordHistory.add(beforeWord);
+            String presentWord = words[i];
 
-        return result;
+            playerNumber = (playerNumber % n) + 1;
+
+            if(i % n == 0) {
+                ground++;
+            }
+
+            if(wordHistory.contains(presentWord) || beforeWord.charAt(beforeWord.length() - 1) != (presentWord.charAt(0))) {
+                return new int[]{playerNumber, ground};
+            }
+
+            beforeWord = presentWord;
+        }
+
+        return new int[]{0, 0};
     }
 }

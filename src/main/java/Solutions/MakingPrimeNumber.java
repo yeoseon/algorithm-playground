@@ -28,6 +28,43 @@ public class MakingPrimeNumber {
     }
 
     /**
+     * solution2 : 재귀를(DFS) 이용하여 조합을 푸는 풀이
+     * https://bcp0109.tistory.com/15
+     * 이를 이용할 경우 answer는 전역으로 꺼내는 방법 밖에 없다..
+     *
+     * @param nums
+     * @return
+     */
+    public int solution2(int[] nums) {
+        return answerWithReculsion(nums, 0, 0, 0);
+    }
+
+    /**
+     * TODO: 미완성
+     * @param nums : 주어진 배열
+     * @param index : 조합을 시작할 index
+     * @param sum : 조합한 숫자의 누적 합
+     * @param reculsionCount : 재귀 함수 호출 Count - 3번 호출되면 종료한다.
+     * @return
+     */
+    private int answerWithReculsion(int[] nums, int index, int sum, int reculsionCount) {
+        int answer = 0;     //TODO: 여기서 초기화 해주면 안됨.. 메소드 분리가 필요함
+
+        if(reculsionCount == 3) {
+            if(isPrimeNumber1(sum)) {
+                answer++;
+            }
+        }
+
+        for(int i = index; i < nums.length; i++) {
+            answerWithReculsion(nums, index + 1, sum + nums[index], reculsionCount + 1);
+        }
+
+        return answer;
+    }
+
+
+    /**
      * isPrimeNumber1 - 소수 판별 함수 1
      * 1을 제외한 모든 수를 나눠서 판단한다.
      * 시간 복잡도는 O(N)

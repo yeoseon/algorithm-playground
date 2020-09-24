@@ -23,6 +23,7 @@ Java
 9. [영어 끝말잇기](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/EnglishWordChain.java) - [문제 링크](https://school.programmers.co.kr/courses/10586/lessons/67680)  
 10. [소수 만들기](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/MakingPrimeNumber.java) - [문제 링크](https://school.programmers.co.kr/courses/10586/lessons/67681)  
     * [(참고자료) 소수 구하기](https://st-lab.tistory.com/80)  
+    * [DFS(깊이우선탐색)](https://github.com/yeoseon/tip-archive/issues/247)    
 
 ### 개념 정리  
 [개념 정리 모음](./%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC)  

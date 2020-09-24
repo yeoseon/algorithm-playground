@@ -12,7 +12,7 @@ public class MakingPrimeNumberTest {
         MakingPrimeNumber instance = new MakingPrimeNumber();
         int[] nums = new int[]{1, 2, 3, 4};
 
-        assertThat(instance.solution1(nums)).isEqualTo(1);
+        assertThat(instance.solution2(nums)).isEqualTo(1);
     }
 
     @Test
@@ -20,7 +20,7 @@ public class MakingPrimeNumberTest {
         MakingPrimeNumber instance = new MakingPrimeNumber();
         int[] nums = new int[]{1, 2, 7, 6, 4};
 
-        assertThat(instance.solution1(nums)).isEqualTo(4);
+        assertThat(instance.solution2(nums)).isEqualTo(4);
     }
 
     @Test

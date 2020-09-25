@@ -8,6 +8,7 @@ public class MakingPrimeNumber {
     /**
      * solution1 : 단순 풀이
      * 3중 포문을 이용해 모두 더한다.
+     * 관련 질문 : https://www.inflearn.com/questions/24004 (다중 for문을 사용할 수 없는 상황)
      * @param nums
      * @return
      */

@@ -8,6 +8,7 @@ public class MakingPrimeNumber {
     /**
      * solution1 : 단순 풀이
      * 3중 포문을 이용해 모두 더한다.
+     * 몇개의 원소를 고를지, 즉 nCr의 r이 명확하다면, 포문을 이용하는 것이 더 간단하게 풀릴 수 있다.
      * 관련 질문 : https://www.inflearn.com/questions/24004 (다중 for문을 사용할 수 없는 상황)
      * @param nums
      * @return

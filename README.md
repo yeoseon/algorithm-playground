@@ -26,10 +26,7 @@ Java
     * [DFS(깊이우선탐색)](https://github.com/yeoseon/tip-archive/issues/247)    
 
 ### 개념 정리  
-[개념 정리 모음](./%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC)  
-1. [해시 알고리즘](./%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC#해시-알고리즘)  
-2. [스택과 큐](./%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC#스택과-큐)  
-3. [힙](./%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC#힙)  
+[개념 정리 모음](https://github.com/yeoseon/tip-archive#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)  
 
 ## 진행  
 

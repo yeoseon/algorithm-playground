@@ -10,8 +10,8 @@ public class ArrangeStringsTest {
         ArrangeStrings instance = new ArrangeStrings();
         String[] strings = {"sun", "bed", "car"};
 
-        assertThat(instance.solution(strings, 1)).containsExactly(new String[]{"car", "bed", "sun"});
-        assertThat(instance.solution(strings, 1)).isEqualTo(new String[]{"car", "bed", "sun"});
+        assertThat(instance.solution1(strings, 1)).containsExactly(new String[]{"car", "bed", "sun"});  // 순서까지 같아야함.
+        assertThat(instance.solution1(strings, 1)).isEqualTo(new String[]{"car", "bed", "sun"});
     }
 
     @Test
@@ -19,7 +19,7 @@ public class ArrangeStringsTest {
         ArrangeStrings instance = new ArrangeStrings();
         String[] strings = {"abce", "abcd", "cdx"};
 
-        assertThat(instance.solution(strings, 2)).containsExactly(new String[]{"abcd", "abce", "cdx"});
-        assertThat(instance.solution(strings, 2)).isEqualTo(new String[]{"abcd", "abce", "cdx"});
+        assertThat(instance.solution1(strings, 2)).containsExactly(new String[]{"abcd", "abce", "cdx"});
+        assertThat(instance.solution1(strings, 2)).isEqualTo(new String[]{"abcd", "abce", "cdx"});
     }
 }

@@ -25,7 +25,7 @@ Java
     * [(참고자료) 소수 구하기](https://st-lab.tistory.com/80)  
     * [DFS(깊이우선탐색)](https://github.com/yeoseon/tip-archive/issues/247)   
 11. [문자열 내 마음대로 정렬하기](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/ArrangeStrings.java) - [문제 링크](https://school.programmers.co.kr/courses/10586/lessons/67683)  
-    * [Comparable 과 Comparator의 차이 및 사용법](https://gmlwjd9405.github.io/2018/09/06/java-comparable-and-comparator.html)  
+    * [Comparable 과 Comparator의 차이 및 사용법](https://github.com/yeoseon/tip-archive/issues/254)  
 
 ### 개념 정리  
 [개념 정리 모음](./%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC)  

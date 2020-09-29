@@ -37,18 +37,15 @@ public class ArrangeStrings {
      * @return
      */
     public String[] solution2(String[] strings, int n) {
-        Arrays.sort(strings, new Comparator<String>() {
-            @Override
-            public int compare(String s, String t1) {
-                char c1 = s.charAt(n);
-                char c2 = t1.charAt(n);
+        Arrays.sort(strings, (String s, String t1) -> {
+            char c1 = s.charAt(n);
+            char c2 = t1.charAt(n);
 
-                if(c1 == c2) {
-                    return s.compareTo(t1);
-                }
-                else {
-                    return c1 - c2;
-                }
+            if(c1 == c2) {
+                return s.compareTo(t1);
+            }
+            else {
+                return c1 - c2;
             }
         });
 

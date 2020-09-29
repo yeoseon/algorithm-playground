@@ -19,7 +19,7 @@ public class ArrangeStringsTest {
         ArrangeStrings instance = new ArrangeStrings();
         String[] strings = {"abce", "abcd", "cdx"};
 
-        assertThat(instance.solution1(strings, 2)).containsExactly(new String[]{"abcd", "abce", "cdx"});
-        assertThat(instance.solution1(strings, 2)).isEqualTo(new String[]{"abcd", "abce", "cdx"});
+        assertThat(instance.solution2(strings, 2)).containsExactly(new String[]{"abcd", "abce", "cdx"});
+        assertThat(instance.solution2(strings, 2)).isEqualTo(new String[]{"abcd", "abce", "cdx"});
     }
 }

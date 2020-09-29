@@ -1,6 +1,7 @@
 package Solutions;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class ArrangeStrings {
 
@@ -24,5 +25,33 @@ public class ArrangeStrings {
             copyStrings[i] = copyStrings[i].substring(1, copyStrings[i].length());
         }
         return copyStrings;
+    }
+
+    /**
+     * 풀이 중에 Comparator을 사용하는 방법도 있음
+     * compare을 재구현 하여 구하는 방법
+     * Arrays.sort 메서드를 잘 알고 활용한 풀이
+     * 속도가 10배 이상 빠르다
+     * @param strings
+     * @param n
+     * @return
+     */
+    public String[] solution2(String[] strings, int n) {
+        Arrays.sort(strings, new Comparator<String>() {
+            @Override
+            public int compare(String s, String t1) {
+                char c1 = s.charAt(n);
+                char c2 = t1.charAt(n);
+
+                if(c1 == c2) {
+                    return s.compareTo(t1);
+                }
+                else {
+                    return c1 - c2;
+                }
+            }
+        });
+
+        return strings;
     }
 }

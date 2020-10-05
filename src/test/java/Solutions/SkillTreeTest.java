@@ -25,4 +25,14 @@ public class SkillTreeTest {
 
         assertThat(instance.removeExceptSkill(skill_tree, skill)).isEqualTo("CB");
     }
+
+    @Test
+    void solution2() {
+        SkillTree instance = new SkillTree();
+
+        String skill = "CBD";
+        String[] skillTrees = {"BACDE", "CBADF", "AECB", "BDA"};
+
+        assertThat(instance.solution2(skill, skillTrees)).isEqualTo(2);
+    }
 }

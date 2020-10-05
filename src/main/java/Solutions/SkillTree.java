@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SkillTree {
+
     /**
      * 1. 주어진 배열을 for문으로 돌려 검사한다.
      * 2. 검사 조건
@@ -80,5 +81,33 @@ public class SkillTree {
             }
         }
         return true;
+    }
+
+    /**
+     * 필요없는 스킬은 삭제하는 방법은 같으나, toString 대신에 valudOf라는 정적 팩토리를 사용하도록 하고, indexOf와 contains 등의 API를 잘 활용해서 좀 더 간략하게 구현한다.
+     * @param skill
+     * @param skill_trees
+     * @return
+     */
+    public int solution2(String skill, String[] skill_trees) {
+        int answer = 0;
+
+        for(int i = 0; i < skill_trees.length; i++) {
+            String skill_tree = skill_trees[i];
+            String skill_tree_clone = new String(skill_tree);       // 답을 구하기 위한 값은 clone 값을 사용할 것이다.
+
+            for(int j = 0; j < skill_tree.length(); j++) {
+                String oneSkill = String.valueOf(skill_tree.charAt(j));
+
+                if(!skill.contains(oneSkill)) {
+                    skill_tree_clone = skill_tree_clone.replace(oneSkill, "");
+                }
+            }
+
+            if(skill.indexOf(skill_tree_clone) == 0) {      // ABCDE에 ABC가 있다면 0이 나올 것이다.
+                answer++;
+            }
+        }
+        return answer;
     }
 }

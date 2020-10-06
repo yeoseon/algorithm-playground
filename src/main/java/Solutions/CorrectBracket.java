@@ -2,6 +2,7 @@ package Solutions;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 public class CorrectBracket {
 
@@ -20,9 +21,8 @@ public class CorrectBracket {
      * 문제를 푼다 해도, for문 돌려서 하는 것과 별반 달라보이지 않는다.
      *
      * @param s
-     * @return
      */
-    boolean solution1(String s) {
+    public boolean solution1(String s) {
 
         if(!LEFT_BRACKET.equals(String.valueOf(s.charAt(0)))) {
             return false;
@@ -41,7 +41,6 @@ public class CorrectBracket {
 
         while (!queue.isEmpty()) {
             if(LEFT_BRACKET.equals(queue.poll())) {
-            if(LEFT_BRACKET.equals(queue.poll())) {
                 numberForResult++;
             }
             if(RIGHT_BRACKET.equals(queue.poll())) {
@@ -50,5 +49,33 @@ public class CorrectBracket {
         }
 
         return numberForResult == 0;
+    }
+
+    /**
+     * Stack을 이용한다.
+     * 1. (가 들어올 때는 push
+     * 2. )가 들어올 때는 pop - 이 때 Stack이 비어있으면 false
+     * 3. 최종적으로 Stack이 비어있지 않아도 false
+     *
+     * @param s
+     * @return
+     */
+    public boolean solution2(String s) {
+
+        Stack<Character> stack = new Stack<>();
+
+        for(char c : s.toCharArray()) {
+            if(c == '(') {
+                stack.push(c);
+            }
+            else {
+                if(stack.isEmpty()) {
+                    return false;
+                }
+                stack.pop();
+            }
+        }
+
+        return stack.isEmpty();
     }
 }

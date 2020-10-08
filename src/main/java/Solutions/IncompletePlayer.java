@@ -10,7 +10,7 @@ import java.util.Map;
  * 해시 알고리즘
  */
 public class IncompletePlayer {
-    public static String solution(String[] participant, String[] completion) {
+    public String solution1(String[] participant, String[] completion) {
         String answer = "";
         Map<String, String> hash = new HashMap<String, String>();
 
@@ -26,6 +26,18 @@ public class IncompletePlayer {
                 hash.remove(participant[j]);
             }
         }
+        return answer;
+    }
+
+    /**
+     * 다시 풀어보기
+     *
+     * @param participant
+     * @param completion
+     * @return
+     */
+    public String solution2(String[] participant, String[] completion) {
+        String answer = "";
         return answer;
     }
 }

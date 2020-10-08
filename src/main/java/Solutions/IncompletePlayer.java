@@ -66,4 +66,38 @@ public class IncompletePlayer {
 
         return answer;
     }
+
+    /**
+     * Hash를 이용한 풀이
+     * getOrDefault() 함수 이용
+     * https://codevang.tistory.com/289 참고
+     * @param participants
+     * @param completions
+     * @return
+     */
+    public String solution3(String[] participants, String[] completions) {
+        String answer = "";
+
+        Map<String, Integer> map = new HashMap<>();
+
+        for(String participant : participants) {
+            map.put(participant, map.getOrDefault(participant, 0) + 1);
+        }
+
+        for(String completion : completions) {
+            map.put(completion, map.get(completion) - 1);
+        }
+
+        // entry.getKey를 사용하는 것이 map.getKey()를 사용하는 것보다 좋다.
+        // map.getKey()를 사용할 경우, 해당 key를 찾기 위해 한번 더 순환하기 때문이다.
+        // 따라서 Entry 자체를 통해 가져오는 것이 더 빠르다.
+        // https://codevang.tistory.com/289 참고
+        for(Map.Entry<String, Integer> entry : map.entrySet()) {
+            if(entry.getValue() > 0) {
+                answer = entry.getKey();
+                break;
+            }
+        }
+        return answer;
+    }
 }

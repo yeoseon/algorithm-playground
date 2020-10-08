@@ -13,6 +13,7 @@ Java
 ### 문제 풀이 ([Sample 답안](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Sample))
 
 1. [완주하지 못한 선수 (해시 알고리즘)](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/IncompletePlayer.java)  
+    * [풀이 및 해시 구조](https://codevang.tistory.com/289)  
 2. [탑 (스택/큐)](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/Top.java)  
 3. [더 맵게 (힙)](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/MoreSpicy.java)  
 4. [K번째 수 (정렬)](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/KthNumber.java)  - [문제 링크](https://programmers.co.kr/learn/courses/30/lessons/42748)  

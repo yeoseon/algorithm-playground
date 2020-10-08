@@ -14,7 +14,7 @@ public class IncompletePlayerTest {
         String[] participant = {"marina", "josipa", "nikola", "vinko", "filipa"};
         String[] completion = {"josipa", "filipa", "marina", "nikola"};
 
-        assertThat(instance.solution1(participant, completion)).isEqualTo("vinko");
+        assertThat(instance.solution2(participant, completion)).isEqualTo("vinko");
     }
 
     @Test
@@ -25,7 +25,7 @@ public class IncompletePlayerTest {
         String[] participant = {"leo", "kiki", "eden"};
         String[] completion = {"eden", "kiki"};
 
-        assertThat(instance.solution1(participant, completion)).isEqualTo("leo");
+        assertThat(instance.solution2(participant, completion)).isEqualTo("leo");
     }
 
     @Test
@@ -36,6 +36,6 @@ public class IncompletePlayerTest {
         String[] participant = {"mislav", "stanko", "mislav", "ana"};
         String[] completion = {"stanko", "ana", "mislav"};
 
-        assertThat(instance.solution1(participant, completion)).isEqualTo("mislav");
+        assertThat(instance.solution2(participant, completion)).isEqualTo("mislav");
     }
 }

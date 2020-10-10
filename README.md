@@ -30,6 +30,8 @@ Java
 12. [스킬트리](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/SkillTree.java) - [문제 링크](https://school.programmers.co.kr/courses/10586/lessons/67684#fn1)  
     * [String.prototype.indexOf()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf)  
 13. [올바른 괄호](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/CorrectBracket.java) - [문제 링크](https://school.programmers.co.kr/courses/10586/lessons/67689)  
+14. [주식 가격](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/PriceOfStock.java) - [문제 링크](https://school.programmers.co.kr/courses/10586/lessons/67691)  
+
 
 ### 개념 정리  
 [개념 정리 모음](https://github.com/yeoseon/tip-archive#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)  

@@ -52,10 +52,13 @@ public class CorrectBracket {
     }
 
     /**
+     * Solution 2 : 효율성 테스트 실패
      * Stack을 이용한다.
      * 1. (가 들어올 때는 push
      * 2. )가 들어올 때는 pop - 이 때 Stack이 비어있으면 false
      * 3. 최종적으로 Stack이 비어있지 않아도 false
+     *
+     * -> for문 내의 stack에서 push, pop 하는 과정이 효율성을 잡아먹는다. -> Stack을 쓸 필요가 없다.
      *
      * @param s
      * @return
@@ -77,5 +80,31 @@ public class CorrectBracket {
         }
 
         return stack.isEmpty();
+    }
+
+    /**
+     * Solution 3
+     *
+     * solution2의 stack 대신 int를 사용한다.
+     * @param s
+     * @return
+     */
+    public boolean solution3(String s) {
+
+        int stack = 0;
+
+        for(char c : s.toCharArray()) {
+            if(c == '(') {
+                stack++;
+            }
+            else {
+                if(stack == 0) {
+                    return false;
+                }
+                stack--;
+            }
+        }
+
+        return stack == 0;
     }
 }

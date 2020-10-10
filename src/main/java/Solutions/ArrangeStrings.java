@@ -45,7 +45,7 @@ public class ArrangeStrings {
                 return s.compareTo(t1);
             }
             else {
-                return c1 - c2;
+                return c1 - c2;     // -1, 0, 1
             }
         });
 

@@ -15,7 +15,11 @@ public class FunctionDevelopmentTest {
         int[] progresses2 = {95, 90, 99, 99, 80, 99};
         int[] speeds2 = {1, 1, 1, 1, 1, 1};
 
+        int[] progresses3 = {95, 90, 99, 99, 80, 99};
+        int[] speeds3 = {10, 10, 10, 10, 10, 10};
+
         assertThat(instance.solution1(progresses1, speeds1)).containsExactly(2, 1);
         assertThat(instance.solution1(progresses2, speeds2)).containsExactly(1, 3, 2);
+        assertThat(instance.solution1(progresses3, speeds3)).containsExactly(4, 2);
     }
 }

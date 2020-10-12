@@ -28,29 +28,17 @@ public class FunctionDevelopment {
      */
     public int[] solution1(int[] progresses, int[] speeds) {
 
-
-        // 실제 배포되는 날짜 목록 구하기
-        int[] releaseDays = new int[progresses.length];
-
-        for(int i = 0; i < progresses.length; i++) {
-            int leftDays = 100 - progresses[i];
-            if(speeds[i] > leftDays) {
-                releaseDays[i] = 1;
-            }
-            else {
-                releaseDays[i] = leftDays / speeds[i];
-
-                if(leftDays % speeds[i] != 0) {
-                    releaseDays[i] = releaseDays[i] + 1;
-                }
-            }
-        }
-
-        // 배포날짜들 Queue에 넣기
+        // 배포날짜들을 구하자마자 Queue에 넣어서 for문을 한번 줄이자.
         Queue<Integer> releaseDayQueue = new LinkedList<>();
 
-        for(int releaseDay : releaseDays) {
-            releaseDayQueue.add(releaseDay);
+        for(int i = 0; i < progresses.length; i++) {
+
+            // 아래 처럼 일일이 if문으로 분기하지 않고, Math.ceil(올림)을 이용한다.
+            if (speeds[i] > 100 - progresses[i]) {
+                releaseDayQueue.add(1);
+                continue;
+            }
+            releaseDayQueue.add((int) Math.ceil((100 - progresses[i]) / speeds[i]));
         }
 
         // 정답 구하기

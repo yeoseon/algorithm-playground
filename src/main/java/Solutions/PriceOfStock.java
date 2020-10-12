@@ -41,4 +41,18 @@ public class PriceOfStock {
 //                    .toArray();
         return answer;
     }
+
+    /**
+     * Solution2 : Stack 이용
+     *
+     *
+     * @param prices
+     * @return
+     */
+    public int[] solution2(int[] prices) {
+        int[] anwser = {};
+
+
+        return anwser;
+    }
 }

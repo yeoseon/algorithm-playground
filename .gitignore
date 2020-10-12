@@ -8,3 +8,5 @@ algorithm.iml
 gradlew
 gradlew.bat
 build
+src/main/java/codingtest
+src/test/java/codingtest

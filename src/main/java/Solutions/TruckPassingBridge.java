@@ -1,11 +1,9 @@
 package Solutions;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-import java.util.stream.Stream;
 
 public class TruckPassingBridge {
 
@@ -36,14 +34,16 @@ public class TruckPassingBridge {
         int second = 0;
         int weightPassingBridge = 0;       // 현재 다리 위에 올라온 Truck의 무게
 
-        for(int i = 0; i < truckList.size() && truckList.size() > passedTruckList.size();) {
+        for(int i = 0; i <= truckList.size() && truckList.size() > passedTruckList.size();) {
             second++;
 
             if(weightPassingBridge + truckList.get(i).getTruck_weight() <= weight) {
                 passingTrucks.add(truckList.get(i));
                 weightPassingBridge += truckList.get(i).getTruck_weight();
 
-                i++;        // 이 로직대로라면 i는 size만큼 올라간다.
+                if(i + 1 < truckList.size()) {
+                    i++;
+                }
             }
 
             for(Truck passingTruck : passingTrucks) {
@@ -57,7 +57,7 @@ public class TruckPassingBridge {
             }
         }
 
-        return second;
+        return second + 1;
     }
 
     public class Truck {

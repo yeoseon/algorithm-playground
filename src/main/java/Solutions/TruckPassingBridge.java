@@ -1,8 +1,6 @@
 package Solutions;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
 
 public class TruckPassingBridge {
@@ -23,8 +21,7 @@ public class TruckPassingBridge {
      * @return
      */
     public int solution1(int bridge_length, int weight, int[] truck_weights) {
-        List<Truck> truckList = new ArrayList<>();
-        List<Truck> passedTruckList = new ArrayList<>();
+        Queue<Truck> truckList = new LinkedList<>();
 
         for(int truck_weight : truck_weights) {
             truckList.add(new Truck(truck_weight));
@@ -32,32 +29,24 @@ public class TruckPassingBridge {
 
         Queue<Truck> passingTrucks = new LinkedList<>();
         int second = 0;
-        int weightPassingBridge = 0;       // 현재 다리 위에 올라온 Truck의 무게
+        int weightPassingBridge = 0;       // 현재 다리 위에 올라온 Truck의 무게 Sum
 
-        for(int i = 0; i <= truckList.size() && truckList.size() > passedTruckList.size();) {
+        while(!truckList.isEmpty() || !passingTrucks.isEmpty()) {
             second++;
 
-            if(weightPassingBridge + truckList.get(i).getTruck_weight() <= weight) {
-                passingTrucks.add(truckList.get(i));
-                weightPassingBridge += truckList.get(i).getTruck_weight();
-
-                if(i + 1 < truckList.size()) {
-                    i++;
-                }
+            if(!passingTrucks.isEmpty() && passingTrucks.peek().isPassed(bridge_length)) {
+                weightPassingBridge -= passingTrucks.poll().getTruck_weight();
             }
 
-            for(Truck passingTruck : passingTrucks) {
-                passingTruck.go();
+            if(!truckList.isEmpty() && weightPassingBridge + truckList.peek().getTruck_weight() <= weight) {
+                Truck polledTruck = truckList.poll();
+                passingTrucks.add(polledTruck);
+                weightPassingBridge += polledTruck.getTruck_weight();
             }
 
-            if(passingTrucks.peek().isPassed(bridge_length)) {
-                Truck passedTruck = passingTrucks.poll();
-                passedTruckList.add(passedTruck);
-                weightPassingBridge -= passedTruck.getTruck_weight();
-            }
+            passingTrucks.forEach(Truck::go);
         }
-
-        return second + 1;
+        return second;
     }
 
     public class Truck {
@@ -85,5 +74,22 @@ public class TruckPassingBridge {
         public boolean isPassed(int bridge_length) {
             return bridge_length == passingLength;
         }
+    }
+
+    /**
+     * 다른 풀이를 찾아보니 Queue를 이용해서 풀었다.
+     * 찬찬히 다시 풀어보기
+     * 어느 부분에서 시간을 많이 잡고 있는 지도 확인해보기
+     * @param bridge_length
+     * @param weight
+     *
+     * @param truck_weights
+     * @return
+     */
+    public int solution2(int bridge_length, int weight, int[] truck_weights) {
+        int second = 0;
+
+
+        return second;
     }
 }

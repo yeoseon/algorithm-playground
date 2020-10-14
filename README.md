@@ -35,7 +35,8 @@ Java
 16. [다리를 지나는 트럭](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/TruckPassingBridge.java) - [문제 링크](https://school.programmers.co.kr/courses/10586/lessons/67693)  
     * [Iterable의 forEach 함수](https://docs.oracle.com/javase/8/docs/api/)  
 17. [위장](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/Camouflage.java)  
-
+    * {a개 b개, c개} 의 조합의 경우의 수 : (a+1)*(b+1)*(c+1) - 1 (-1은 아무것도 안했을 때의 경우의 수)  
+18. [전화번호 목록](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/ListOfPhoneNumber.java) - [문제 링크](https://school.programmers.co.kr/courses/10586/lessons/67695)
 
 ### 개념 정리  
 [개념 정리 모음](https://github.com/yeoseon/tip-archive#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)  

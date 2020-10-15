@@ -37,7 +37,10 @@ Java
 17. [위장](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/Camouflage.java)  
     * {a개 b개, c개} 의 조합의 경우의 수 : (a+1)*(b+1)*(c+1) - 1 (-1은 아무것도 안했을 때의 경우의 수)  
 18. [전화번호 목록](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/ListOfPhoneNumber.java) - [문제 링크](https://school.programmers.co.kr/courses/10586/lessons/67695)
-
+    * [해시를 이요한 풀이](https://codevang.tistory.com/290)  
+    * [해시 및 String의 유용한 API 정리](https://jyami.tistory.com/42)  
+    * [hashcode()](https://johngrib.github.io/wiki/Object-hashCode/)  
+    
 ### 개념 정리  
 [개념 정리 모음](https://github.com/yeoseon/tip-archive#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)  
 

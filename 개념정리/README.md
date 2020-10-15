@@ -23,6 +23,8 @@ https://github.com/yeoseon/tip-archive/issues/260 참고
 
 # 해시 알고리즘  
 
+https://github.com/yeoseon/tip-archive/issues/261 참고  
+
 ## 해시 함수
 
 문자열을 받아서 숫자를 반환한다.  

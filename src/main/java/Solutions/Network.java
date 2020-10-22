@@ -31,7 +31,7 @@ public class Network {
      */
     public int solution1(int n, int[][] computers) {
         int searchCount = 0;
-        boolean[] isCheck = new boolean[n];
+        boolean[] isCheck = new boolean[n];     // 굳이 List로 할 필요 없이, Node들이 검사가 되었는지만 보면 됐었다.
 
         for(int node = 0; node < n; node++) {
             if(!isCheck[node]) {
@@ -48,7 +48,7 @@ public class Network {
 
         for(int i = 0; i < computers.length; i++) {
             if(i != node && computers[node][i] == 1 && !isCheck[i]) {
-                search(i, computers,isCheck);
+                search(i, computers, isCheck);
             }
         }
 

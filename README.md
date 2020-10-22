@@ -16,6 +16,7 @@ Java
     * [풀이 및 해시 구조](https://codevang.tistory.com/289)  
 2. [탑 (스택/큐)](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/Top.java)  
 3. [더 맵게 (힙)](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/MoreSpicy.java)  
+    * [힙](https://github.com/yeoseon/algorithm-playground/tree/master/%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC#%ED%9E%99)  
 4. [K번째 수 (정렬)](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/KthNumber.java)  - [문제 링크](https://programmers.co.kr/learn/courses/30/lessons/42748)  
 5. [모의고사(완전탐색)](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/MockExam.java) - [문제 링크](https://programmers.co.kr/learn/courses/30/lessons/42840)  
 6. [하샤드 수](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/HashedNumber.java)  - [문제 링크](https://school.programmers.co.kr/courses/10586/lessons/67676?language=java)    

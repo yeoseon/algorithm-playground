@@ -30,4 +30,34 @@ public class MoreSpicy {
         }
         return answer;
     }
+
+    /**
+     * 내가 안보고 다시 푼 예제
+     * 힙 -> 우선순위 큐를 이용한다.
+     * @param scovilles
+     * @param K
+     * @return
+     */
+    public int solution2(int[] scovilles, int K) {
+        int answer = 0;
+        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
+
+        for(int scoville : scovilles) {
+            priorityQueue.add(scoville);
+        }
+
+        while(priorityQueue.peek() < K) {
+            if (priorityQueue.size() == 1) {
+                return -1;
+            }
+
+            int min = priorityQueue.poll();
+            int secondMin = priorityQueue.poll();
+
+            priorityQueue.add(min + (secondMin * 2));
+            answer++;
+        }
+
+        return answer;
+    }
 }

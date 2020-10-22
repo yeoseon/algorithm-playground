@@ -9,7 +9,7 @@ import java.util.PriorityQueue;
  */
 public class MoreSpicy {
 
-    public static int solution(int[] scoville, int K) {
+    public int solution1(int[] scoville, int K) {
         int answer = 0;
         PriorityQueue<Integer> heap = new PriorityQueue();
 

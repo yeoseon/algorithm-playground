@@ -101,4 +101,11 @@ public class IncompletePlayer {
         }
         return answer;
     }
+
+    /**
+     * 0이나 1로 채우지 않고, remove 시켜버려서, 마지막 남은 즉, 첫번쨰 요소를 return 하는 것도 방법이다.
+     * 이때 첫번쨰 요소 반환시 사용하는 stream은 아래와 같다.
+     *
+     * map.keySet().stream().findFirst().get();
+     */
 }

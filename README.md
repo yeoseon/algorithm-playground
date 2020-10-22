@@ -43,7 +43,8 @@ Java
     * [hashcode()](https://brunch.co.kr/@mystoryg/133)  
     * [해시 알고리즘](https://github.com/yeoseon/algorithm-playground/tree/master/%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC#%ED%95%B4%EC%8B%9C-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)  
     * [내가 정리한 해시에 대한 내용](https://github.com/yeoseon/tip-archive/issues/261)  
-    
+19. [네트워크](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/Network.java) - [문제 링크](https://school.programmers.co.kr/courses/10586/lessons/67699)  
+
 ### 개념 정리  
 [개념 정리 모음](https://github.com/yeoseon/tip-archive#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)  
 

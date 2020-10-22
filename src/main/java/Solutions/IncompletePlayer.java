@@ -68,7 +68,8 @@ public class IncompletePlayer {
     }
 
     /**
-     * Hash를 이용한 풀이
+     * Hash를 이용한 풀이 : Index를 통해 바로 찾고 싶을 때
+     * 동명 이인이 있으므로 Set은 사용할 수 없다. Map을 쓰자
      * getOrDefault() 함수 이용
      * https://codevang.tistory.com/289 참고
      * @param participants

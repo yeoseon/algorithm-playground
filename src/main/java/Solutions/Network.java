@@ -31,11 +31,11 @@ public class Network {
      */
     public int solution1(int n, int[][] computers) {
         int searchCount = 0;
-        Set<Integer> searchHistory = new HashSet<>();
+        boolean[] isCheck = new boolean[n];
 
         for(int node = 0; node < n; node++) {
-            if(!searchHistory.contains(node)) {
-                search(node, computers, searchHistory);
+            if(!isCheck[node]) {
+                search(node, computers, isCheck);
                 searchCount++;
             }
         }
@@ -43,15 +43,15 @@ public class Network {
         return searchCount;
     }
 
-    private Set<Integer> search(int node, int[][] computers, Set<Integer> searchHistory) {
-        searchHistory.add(node);
+    private boolean[] search(int node, int[][] computers, boolean[] isCheck) {
+        isCheck[node] = true;
 
         for(int i = 0; i < computers.length; i++) {
-            if(i != node && computers[node][i] == 1 && !searchHistory.contains(node)) {
-                search(i, computers, searchHistory);
+            if(i != node && computers[node][i] == 1 && !isCheck[i]) {
+                search(i, computers,isCheck);
             }
         }
 
-        return searchHistory;
+        return isCheck;
     }
 }

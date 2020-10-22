@@ -55,12 +55,12 @@ public class IncompletePlayer {
         }
 
         for(int i = 0; i < completion.length; i++) {
-            if(completionList.indexOf(participant[i]) == -1) {
+            if(completionList.indexOf(participant[i]) == -1) {      // 사실 불필요한 로직. 바로 remove해도 됨
                 return participant[i];
             }
 
             else {
-                completionList.remove(completionList.indexOf(participant[i]));
+                completionList.remove(completionList.indexOf(participant[i]));      //remove는 하나하나 찾아가면서 remove 시키므로, 효율성에서 좋지 않다.
             }
         }
 

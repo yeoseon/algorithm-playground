@@ -46,6 +46,7 @@ Java
 19. [네트워크](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/Network.java) - [문제 링크](https://school.programmers.co.kr/courses/10586/lessons/67699)  
 20. [(다시풀어보기)라면공장](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/RamenFactory.java) - [문제 링크](https://school.programmers.co.kr/courses/10586/lessons/67700)  
     * 우선순위 큐를 오름차순으로 사용하려면, `Comparator.reverseOrder()`를 사용한다.  
+21. [타켓넘버](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/TargetNumber.java) - [문제 링크](https://school.programmers.co.kr/courses/10586/lessons/67701)  
 
 ### 개념 정리  
 [개념 정리 모음](https://github.com/yeoseon/tip-archive#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)  

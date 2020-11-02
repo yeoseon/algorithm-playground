@@ -12,36 +12,34 @@ public class TargetNumber {
      * @return
      */
     public int solution1(int[] numbers, int target) {
-        int count = 0;
+        List<Integer> count = new ArrayList<>();
 
-        count += recursion(numbers, target, 0, numbers.length, 0);
+        recursion(numbers, target, count, 0, numbers.length, 0);
 
-        return count;
+        return count.size();
     }
 
     /**
      *
      * @param numbers : 주어진 배열
      * @param target : 만들고자 하는 숫자
+     * @param count : 만들고자 하는 숫자에 부합하는 경우의 수
      * @param index : 더하고자 하는 배열 index
      * @param r : 남은 수. 0이 되면 재귀를 종료한다.
      * @param sum : 현재까지의 합
      */
-    private int recursion(int[] numbers, int target, int index, int r, int sum) {
+    private void recursion(int[] numbers, int target, List<Integer> count, int index, int r, int sum) {
         if(r == 0) {
             if(sum == target) {
-                return 1;
+                count.add(1);
             }
-            return 0;
+            return ;
         }
 
         int positiveSum = numbers[index] + sum;
         int negativeSum = numbers[index]*(-1) + sum;
 
-        int ans = 0;
-        ans += recursion(numbers, target, index + 1, r - 1, positiveSum);
-        ans += recursion(numbers, target, index + 1, r - 1, negativeSum);
-
-        return ans;
+        recursion(numbers, target, count, index + 1, r - 1, positiveSum);
+        recursion(numbers, target, count, index + 1, r - 1, negativeSum);
     }
 }

@@ -166,7 +166,8 @@ public class GameMapShortestDistance {
 
     /**
      * BFS를 이용해서 구현한다.
-     * BFS는 너비 우선이기 때문에, 빠르게 도착하면 바로 끝낼 수 있어서 더 효율적인가보다.
+     * BFS는 너비 우선이기 때문에, 빠르게 도착하면 바로 끝낼 수 있어서 더 효율적이다.
+     * https://lightsky1992.tistory.com/23
      * @param maps
      * @return
      */

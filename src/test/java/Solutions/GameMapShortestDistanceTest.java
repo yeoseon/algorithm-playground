@@ -12,7 +12,7 @@ public class GameMapShortestDistanceTest {
         int[][] maps2 = {{1, 0, 1, 1, 1}, {1, 0, 1, 0, 1}, {1, 0, 1, 1, 1}, {1, 1, 1, 0, 0}, {0, 0, 0, 0, 1}};
 
         GameMapShortestDistance gameMapShortestDistance = new GameMapShortestDistance();
-        assertThat(gameMapShortestDistance.solution1(maps1)).isEqualTo(11);
+        assertThat(gameMapShortestDistance.solution2(maps1)).isEqualTo(11);
         assertThat(gameMapShortestDistance.solution1(maps2)).isEqualTo(-1);
     }
 }

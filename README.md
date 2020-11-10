@@ -48,7 +48,7 @@ Java
     * 우선순위 큐를 오름차순으로 사용하려면, `Comparator.reverseOrder()`를 사용한다.  
 21. [타켓넘버](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/TargetNumber.java) - [문제 링크](https://school.programmers.co.kr/courses/10586/lessons/67701)  
 22. [단어변환](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/WordConversion.java) - [문제 링크](https://school.programmers.co.kr/courses/10586/lessons/67702)  
-
+23. [게임 맵 최단거리](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/GameMapShortestDistance.java) - [문제 링크](https://school.programmers.co.kr/courses/10586/lessons/67703)
 ### 개념 정리  
 [개념 정리 모음](https://github.com/yeoseon/tip-archive#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)  
 

@@ -350,3 +350,75 @@ console.log(sum[4][4]);
 ## Reference  
 * [동적계획법 정리](https://medium.com/@wooder2050/%EB%8F%99%EC%A0%81%EA%B3%84%ED%9A%8D%EB%B2%95-dynamic-programming-%EC%A0%95%EB%A6%AC-58e1dbcb80a0)
 * [동적계획법](https://velog.io/@polynomeer/%EB%8F%99%EC%A0%81-%EA%B3%84%ED%9A%8D%EB%B2%95Dynamic-Programming)  
+
+# 탐욕법(Greedy Algorithm)  
+
+동적 프로그래밍 사용시 지나치게 일을 많이 한다는 것에서 착안하여 고안된 알고리즘  
+동적 프로그래밍을 보완하는 개념이다.  
+문제를 해결하는 과정에서 그 순간순간마다 최적이라고 생각되는 결정을 하는 방식으로 진행하여 최종 해답에 도달하는 문제 해결 방식  
+미래를 생각하지 않고 각 단계에서 최선의 선택을 하는 기법  
+각 단계에서의 최선의 선택이 전체적으로도 최선이길 바라는 알고리즘  
+
+## 예제 1 : 활동 선택 문제 (Activity Selection Problem)  
+
+한 강의실에서 여러 개의 수업을 하려고 할 때, 한번에 가장 많은 수업을 할 수 있는 경우를 고르자.  
+(Si: 시작 시간, Fi: 종료시간)  
+한 강의실에서 수업하기 때문에 시간이 겹치면 선택할 수 없다.  
+![image](https://user-images.githubusercontent.com/54384004/98771415-c3aab080-2427-11eb-9099-41b94c5a7d53.png)
+
+### 해결 (동적 프로그래밍 이용)  
+
+* G18 : A1이 종료된 후부터 A8이 시작하기 전 활동들의 집합  
+    * G18 = {A3, A5, A6, A7}
+* 이 중에서의 최적의 조합 (활동들이 겹치지 않고 개수는 최대)을 B18 이라고 하면,  
+    * B18 = {A3, A6}, {A3, A7}
+* B18에서 A6을 골랐을 때, 문제는 두 개로 쪼개진다.  
+    * G16과 G68에서 각각 최적인 B16과 B68을 찾는 것이다.   
+    * 점화식 : C[i,j] = max(C[i,k] + C[k,j] + 1) (C: Gij의 최적의 개수)
+* 이렇게 하면 우리는 모든 C들을 구해야한다.  
+
+### 해결 (그리디 알고리즘)    
+
+1. 첫번째 활동은 가장 먼저 끝나는 것이로 선택하는 것이 현재의 상황에서 가장 최선의 선택이다.  
+2. 가장 먼저 끝나는 A1 활동을 실시한다.  
+3. A1 활동이 끝난 후 또 다시 빠르게 끝낼 수 있는 활동을 찾는다.  
+4. 그 활동을 실시한다.  
+5 ... 반복  
+
+```
+var activity = [[1,1,3], [2,2,5], [3,4,7], [4,1,8], [5,5,9], [6,8,10], [7,9,11], [8,11,14], [9,13,16]];
+function activitySelection(act) {
+  var result = [];
+  var sorted = act.sort(function(prev, cur) {
+    return prev[2] - cur[2]; // 끝나는 시간 순으로 정렬
+  });
+  var last = 0;
+  sorted.forEach(function(item) {
+    if (last < item[1]) { // 조건 만족 시 결과 집합에 추가
+      last = item[2];
+      result.push(item);
+    }
+  });
+  return result.map(function(r) {
+    return r[0]; // map을 한 이유는 그냥 몇 번째 행동이 선택되었는지 보여주기 위함.
+  });
+}
+activitySelection(activity); // [1, 3, 6, 8]
+```
+
+## 예제 2 : 분할 가능 배낭 문제  
+
+무게에 따라 물건을 넣는 배낭. 가치가 높은 것부터 넣는 것이 좋다. 무거울 경우 쪼개서 넣을 수 있다.  
+
+![image](https://user-images.githubusercontent.com/54384004/98773095-8c3e0300-242b-11eb-8ed1-860236c7e138.png)
+
+1. 무게 대비 가치가 높은 것들을 먼저 넣는다.  
+2. 초과될 경우 쪼개서 넣는다.  
+
+## 탐욕법의 조건  
+1. 탐욕스러운 선택 조건  
+2. 최적 부분 구조 조건  
+
+## Reference  
+* [동적계획법과 탐욕법](https://velog.io/@cyranocoding/%EB%8F%99%EC%A0%81-%EA%B3%84%ED%9A%8D%EB%B2%95Dynamic-Programming%EA%B3%BC-%ED%83%90%EC%9A%95%EB%B2%95Greedy-Algorithm-3yjyoohia5)  
+* [그리디 알고리즘](https://www.zerocho.com/category/Algorithm/post/584ba5c9580277001862f188)  

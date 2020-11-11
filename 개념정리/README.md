@@ -201,3 +201,152 @@ int delete_max_heap(){
 ## Reference  
  
 * [[자료구조]힙(heap)이란](https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html)  
+
+# 동적계획법  
+
+문제의 최적해를 구하거나 답의 개수를 세는 과정에 사용할 수 있는 설계 기법  
+불필요한 계산을 줄이고 효율적으로 최적해를 찾을 수 있다.  
+
+**전체 문제를 작은 문제로 단순화한 다음 점화식으로 만들어 재귀적인 구조를 활용해서 전체 문제를 해결하는 방식**  
+
+1. 전체 문제를 작은 문제로 단순화 한다. -> 부분 문제를 정의한다.  
+2. 재귀적인 구조를 활용할 수 있는 점화식을 만든다. -> 점화식을 만든다.  
+3. 작은 문제를 해결한 방법으로 전체 문제를 해결한다. -> 문제를 해결한다.  
+
+## 동적계획법 조건  
+
+1. 겹치는 부분(작은) 문제로 쪼개질 수 있어야 한다.  
+    * 예): 피보나치수열   
+2. 최적 부분구조 : 어떤 문제의 최적의 해결책이 그 부분 문제의 최적의 해결책으로부터 설계될 수 있는 경우 
+    * 문제의 정답을 작은 문제의 정답으로부터 구할 수 있다.  
+
+## 메모이제이션  
+
+동적계획법에서 각 문제는 한 번만 풀어야 한다.  
+최적 부분구조를 만족하기 때문에, 같은 문제는 구할 때마다 정답이 같다.  
+따라서 한번 구했으면 캐싱을 해놓아야 한다.  
+
+```
+int memo[100];
+int fibonacci(int n) {
+    if (n <= 1) {
+    	return n;
+    } else {
+    	memo[n] = fibonacci(n-1) + fibonacci(n-2);
+    	return memo[n];
+    }
+}
+```
+
+## 동적계획법 구현방식  
+
+### 1) Top-down: 큰 문제를 작은 문제로 쪼개면서 푼다.
+
+재귀를 이용하여 구현한다.  
+
+#### 예시 :: 피보나치 수열  
+
+1. 문제를 작은 문제로 나눈다. 
+    * fibo(n-1)과 fibo(n-2)로 문제를 나눈다.  
+2. 작은 문제를 푼다.  
+    * fibo(n-1)과 fibo(n-2)을 호출해 문제를 푼다.  
+3. 이제 큰 문제를 푼다.  
+    * fibo(n-1) + fibo(n-2)  
+    
+```
+int d[100];
+int fibonacci(int n) {
+    if (n <= 1) {
+    	return n;
+    } else {
+        if (d[n] > 0) {		// d의 값이 0이 아니면
+            return d[n];	// 그 값을 그대로 사용
+        }
+        d[n] = fibonacci(n-1) + fibonacci(n-2);     //캐싱  
+        return d[n];
+    }
+}
+```
+
+## 2) Bottom-up: 작은 문제부터 차례대로 푼다.  
+    
+반복문을 이용해서 푼다.  
+
+#### 예시 :: 피보나치 수열  
+
+1. 문제를 크기가 작은 문제부터 차례대로 푼다.  
+    * for(int i = 2; i <= n; i++)  
+2. 문제의 클기를 조금씩 크게 만들면서 문제를 크게 풀어간다.   
+    * for(int i = 2; i <= n; i++)  
+3. 작은 문제를 풀면서 왔기에 큰 문제는 항상 풀수 있다.  
+    * d[i] = d[i-1] + d[i-2]  
+4. 반복하다 보면 가장 큰 문제를 풀 수 있다.  
+    * d[n]을 구하게 된다.  
+    
+```
+int d[100];
+int fibonacci(int n) {
+    d[0] = 0;
+    d[1] = 1;
+    for (int i=2; i<=n; i++) {	// 2에서 부터 시작해서 n까지 반복
+    	d[i] = d[i-1] + d[i-2];
+    }
+    return d[n];
+}
+```  
+
+## 예시 문제: 격자상의 경로  
+
+![image](https://user-images.githubusercontent.com/54384004/98763303-16329f80-241d-11eb-8206-73fdf1e08415.png)
+
+NxN 격자가 있을 때, 왼쪽 위부터 오른쪽 아래까지 갈 때의 가장 최적의 경로 (최댓값)을 찾는 문제.  
+방향은 오직 오른쪽과 아래만으로 가능하다.  
+
+### 해결 방법  
+
+1. 부분 문제를 정의한다.  
+    * 왼쪽 위를 (0, 0), 오른쪽 아래를 (4, 4)로 하는 좌표를 기준으로 sum이라는 새로운 2차배열을 만든다 (캐싱을 위해)  
+    * sum에는 (y,x) 좌표까지의 최댓값을 캐싱한다.  
+2. 점화식을 구한다.  
+    * sum(y,x)는 sum(y, x-1)이나 sum(y-1,x) 중에 큰 값을 골라서 원래 격자에 주어진 sum(y,x)값을 더하면 구해진다.  
+    * `sum(y,x) = max(sum(y, x-1), sum(y-1, x)) + value(y,x)`
+3. 이중 for문으로 1부터 배열 길이만큼 sum 배열을 채워 넣으면 sum(n,n)의 값을 구할 수 있다.  
+
+```
+var value = [
+    [3, 7, 9, 2, 7],
+    [9, 8, 3, 5, 5],
+    [1, 7, 9, 8, 5],
+    [3, 8, 6, 4, 10],
+    [6, 3, 9, 7, 8]    
+];
+var sum = [];
+for (var i = 0; i < value.length; i++) {
+    sum[i] = [];
+}
+sum[0][0] = value[0][0];
+var colSum = sum[0][0];
+var rowSum = sum[0][0];
+for (var i = 1; i < value.length; i++) {
+    colSum += value[i][0];
+    sum[i][0] = colSum;
+}
+for (var i = 1; i < value.length; i++) {
+    rowSum += value[0][i];
+    sum[0][i] = rowSum;
+}
+
+for (var y = 1; y < value.length; y++) {
+    for (var x = 1; x < value[0].length; x++) {
+        if (sum[y][x - 1] > sum[y -1][x])  {
+            sum[y][x] =  sum[y][x - 1]  + value[y][x];   
+        } else {
+            sum[y][x] = (sum[y -1][x] + value[y][x]);
+        }
+    }
+}
+console.log(sum[4][4]);
+```
+## Reference  
+* [동적계획법 정리](https://medium.com/@wooder2050/%EB%8F%99%EC%A0%81%EA%B3%84%ED%9A%8D%EB%B2%95-dynamic-programming-%EC%A0%95%EB%A6%AC-58e1dbcb80a0)
+* [동적계획법](https://velog.io/@polynomeer/%EB%8F%99%EC%A0%81-%EA%B3%84%ED%9A%8D%EB%B2%95Dynamic-Programming)  

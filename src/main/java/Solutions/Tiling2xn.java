@@ -10,19 +10,14 @@ public class Tiling2xn {
      * @return
      */
     public int solution1(int n) {
-        int answer = 0;
         int a = 1;  // n - 1
         int b = 1;  // n - 2
 
         for(int i = 0; i < n - 1; i++) {
-            answer = a + b;
+            int c = (a + b) % 1000000007;
             a = b;
-            b = answer;
+            b = c;
         }
-
-        if(answer != 0) {
-            return answer % 1000000007;
-        }
-        return answer;
+        return b;
     }
 }

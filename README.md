@@ -50,6 +50,7 @@ Java
 22. [단어변환](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/WordConversion.java) - [문제 링크](https://school.programmers.co.kr/courses/10586/lessons/67702)  
 23. [게임 맵 최단거리](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/GameMapShortestDistance.java) - [문제 링크](https://school.programmers.co.kr/courses/10586/lessons/67703)
 24. [2 x n 타일링](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/Tiling2xn.java) - [문제 링크](https://school.programmers.co.kr/courses/10586/lessons/67706)  
+25. [체육복](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/GymSuit.java) - [문제 링크](https://school.programmers.co.kr/courses/10586/lessons/67707)  
 XX. [팰린드롬](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/Palindrome.java) - [문제 링크](https://www.acmicpc.net/problem/1243)  
 
 ### 개념 정리  

@@ -1,5 +1,8 @@
 package Solutions;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class Network {
     /**
      * 혼자 고민해본 로직
@@ -29,7 +32,7 @@ public class Network {
 
         for(int node = 0; node < n; node++) {
             if(!isCheck[node]) {
-                search(node, computers, isCheck);
+                search2(node, computers, isCheck);
                 searchCount++;
             }
         }
@@ -47,5 +50,49 @@ public class Network {
         }
 
         return isCheck;
+    }
+
+    /**
+     * BFS 이용하여 풀이 (강의 참고)
+     * @param node
+     * @param computers
+     * @param isCheck
+     */
+    private void search2(int node, int[][] computers, boolean[] isCheck) {
+        Queue<Integer> queue = new LinkedList<>();
+        queue.offer(node);
+
+        while(!queue.isEmpty()) {
+            int c = queue.poll();
+            for(int i = 0; i < computers[node].length; i++) {
+                if(isCheck[i]) continue;
+                if(computers[c][i] == 1) {
+                    isCheck[i] = true;
+                    queue.offer(i);
+                }
+            }
+        }
+    }
+
+    /**
+     * Stack을 이용한 DFS로 풀이 (강의 참고)
+     * @param node
+     * @param computers
+     * @param isCheck
+     */
+    private void search3(int node, int[][] computers, boolean[] isCheck) {
+        Queue<Integer> queue = new LinkedList<>();
+        queue.offer(node);
+
+        while(!queue.isEmpty()) {
+            int c = queue.poll();
+            for(int i = 0; i < computers[node].length; i++) {
+                if(isCheck[i]) continue;
+                if(computers[c][i] == 1) {
+                    isCheck[i] = true;
+                    queue.offer(i);
+                }
+            }
+        }
     }
 }

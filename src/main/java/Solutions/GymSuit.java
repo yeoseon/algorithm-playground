@@ -1,5 +1,7 @@
 package Solutions;
 
+import java.util.Arrays;
+
 public class GymSuit {
 
     /**
@@ -39,5 +41,50 @@ public class GymSuit {
             }
         }
         return answer;
+    }
+
+    public int solution2(int n, int[] lost, int[] reserve) {
+        int[] s = new int[n];
+        Arrays.fill(s, 1);          // 학생은 체육복은 무조건 1개씩 가지고 있어야 하므로 1로 채워준다.
+
+        // for(int i : lost) s[i - 1] -= 1; 과 같다.
+        for(int i = 0; i < lost.length; i++) {
+            int studentNumber = lost[i];
+            int studentIndex = studentNumber - 1;
+            s[studentIndex] -= 1;
+        }
+
+
+        // for(int i : reserve) s[i - 1] += 1; 과 같다.
+        for(int i = 0; i < reserve.length; i++) {
+            int studentNumber = reserve[i];
+            int studentIndex = studentNumber - 1;
+            s[studentIndex] += 1;
+        }
+
+        for(int i = 0; i < n; i++) {
+            if(s[i] <= 1) continue;
+
+            if(i > 0 && s[i-1] < 1) {
+                s[i-1] += 1;
+                s[i] -= 1;
+            } else if(i < n-1 && s[i+1] < 1) {
+                s[i+1] += 1;
+                s[i] -= 1;
+            }
+        }
+
+        int anwser = 0;
+
+        //for(int i = 0; i < n; i++) anwser += s[i] >= 1 ? 1 : 0; 과 같다.
+        for(int i = 0; i < n; i++) {
+            if(s[i] >= 1) {
+                anwser += 1;
+            } else {
+                anwser += 0;
+            }
+        }
+
+        return anwser;
     }
 }

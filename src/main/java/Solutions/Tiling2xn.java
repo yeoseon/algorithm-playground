@@ -3,7 +3,7 @@ package Solutions;
 public class Tiling2xn {
     /**
      * https://deveric.tistory.com/61
-     *
+     * F(1) = 1, F(n) = 2
      * 점화식 : F(n-3) = (F(n-1) + F(n-2)) * F(1) -> F(n-3) = F(n-1) + F(n-2)
      * -> 피보나치 수열
      * @param n
@@ -19,5 +19,21 @@ public class Tiling2xn {
             b = c;
         }
         return b;
+    }
+
+    static final int MOD = 1000000007;
+
+    public int solution2(int n) {
+        int[] d = new int[n+1];
+
+        d[0] = 0;
+        d[1] = 1;
+        d[2] = 2;
+
+        for(int i = 3; i <= n; i++) {
+            d[i] = (d[i-1] + d[i-2]) % MOD;
+        }
+
+        return d[n];
     }
 }

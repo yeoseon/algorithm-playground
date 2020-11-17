@@ -2,6 +2,7 @@ package Solutions;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 public class Network {
     /**
@@ -32,7 +33,7 @@ public class Network {
 
         for(int node = 0; node < n; node++) {
             if(!isCheck[node]) {
-                search2(node, computers, isCheck);
+                search3(node, computers, isCheck);
                 searchCount++;
             }
         }
@@ -81,16 +82,16 @@ public class Network {
      * @param isCheck
      */
     private void search3(int node, int[][] computers, boolean[] isCheck) {
-        Queue<Integer> queue = new LinkedList<>();
-        queue.offer(node);
+        Stack<Integer> stack = new Stack<>();
+        stack.push(node);
 
-        while(!queue.isEmpty()) {
-            int c = queue.poll();
-            for(int i = 0; i < computers[node].length; i++) {
+        while(!stack.isEmpty()) {
+            int c = stack.pop();
+            for(int i = 0; i < computers[c].length; i++) {
                 if(isCheck[i]) continue;
                 if(computers[c][i] == 1) {
                     isCheck[i] = true;
-                    queue.offer(i);
+                    stack.push(i);
                 }
             }
         }

@@ -16,8 +16,8 @@ public class MineSweeper {
     private static final String NONE_MINE = "-";
     private static final String MINE = "*";
 
-    private String[][] mindArray = new String[COL][ROW];
-    private Integer[][] mindSweeper = new Integer[COL][ROW];
+    private String[][] mindArray = new String[ROW][COL];
+    private Integer[][] mindSweeper = new Integer[ROW][COL];
 
     public static void main(String[] args) {
         MineSweeper mindSweeper = new MineSweeper();
@@ -34,8 +34,8 @@ public class MineSweeper {
     }
 
     private void initArrays() {
-        for(int i = 0; i < 10; i++) {
-            for(int j = 0; j < 10; j++) {
+        for(int i = 0; i < ROW; i++) {
+            for(int j = 0; j < COL; j++) {
                 mindArray[i][j] = NONE_MINE;
                 mindSweeper[i][j] = 0;
             }
@@ -46,15 +46,15 @@ public class MineSweeper {
         Random random = new Random();
 
         while(mineCount > 0) {
-            int row = random.nextInt(ROW);
-            int col = random.nextInt(COL);
+            int randomRow = random.nextInt(ROW);
+            int randomCol = random.nextInt(COL);
 
-            if(MINE.equals(mindArray[row][col])) {
+            if(MINE.equals(mindArray[randomRow][randomCol])) {
                 mineCount++;
             }
             else {
-                mindArray[row][col] = MINE;
-                countMines(row, col);
+                mindArray[randomRow][randomCol] = MINE;
+                countMines(randomRow, randomCol);
             }
             mineCount--;
         }
@@ -63,7 +63,7 @@ public class MineSweeper {
     private void countMines(int row, int col) {
         for(int i = row - 1; i <= row + 1; i++) {
             for(int j = col - 1; j <= col + 1; j++) {
-                if(i < 0 || j < 0 || i >= COL || j >= ROW || (i == row && j == col)) {
+                if(i < 0 || j < 0 || i >= ROW || j >= COL || (i == row && j == col)) {
                     continue;
                 }
                 mindSweeper[i][j]++;
@@ -72,8 +72,8 @@ public class MineSweeper {
     }
 
     private void printMineArray() {
-        for(int i = 0; i < COL; i++){
-            for (int j = 0; j < ROW; j++){
+        for(int i = 0; i < ROW; i++){
+            for (int j = 0; j < COL; j++){
                 System.out.print(mindArray[i][j]);
             }
             System.out.println();
@@ -81,8 +81,8 @@ public class MineSweeper {
     }
 
     private void printMinesweeper() {
-        for(int i = 0; i < COL; i++){
-            for (int j = 0; j < ROW; j++){
+        for(int i = 0; i < ROW; i++){
+            for (int j = 0; j < COL; j++){
                 System.out.print(mindSweeper[i][j]);
             }
             System.out.println();

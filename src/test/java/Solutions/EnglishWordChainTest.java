@@ -18,7 +18,7 @@ public class EnglishWordChainTest {
         int n = 3;
         String[] words = {"tank", "kick", "know", "wheel", "land", "dream", "mother", "robot", "tank"};
 
-        assertThat(instance.solution(n, words)).containsExactly(3, 3);
+        assertThat(instance.practice1(n, words)).containsExactly(3, 3);
     }
 
     @Test
@@ -26,7 +26,7 @@ public class EnglishWordChainTest {
         int n = 5;
         String[] words = {"hello", "observe", "effect", "take", "either", "recognize", "encourage", "ensure", "establish", "hang", "gather", "refer", "reference", "estimate", "executive"};
 
-        assertThat(instance.solution(n, words)).containsExactly(0, 0);
+        assertThat(instance.practice1(n, words)).containsExactly(0, 0);
     }
 
     @Test
@@ -34,7 +34,7 @@ public class EnglishWordChainTest {
         int n = 2;
         String[] words = {"hello", "one", "even", "never", "now", "world", "draw"};
 
-        assertThat(instance.solution(n, words)).containsExactly(1, 3);
+        assertThat(instance.practice1(n, words)).containsExactly(1, 3);
     }
 
 //    @Test

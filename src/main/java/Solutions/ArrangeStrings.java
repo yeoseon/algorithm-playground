@@ -51,4 +51,44 @@ public class ArrangeStrings {
 
         return strings;
     }
+
+    /**
+     * 공부를 위한 재풀이
+     * @param strings
+     * @param n
+     * @return
+     */
+    public String[] practice1(String[] strings, int n) {
+        String[] copyStrings = new String[strings.length];
+        for(String string : strings) {
+            string = string.charAt(n) + string;
+        }
+        for(int i = 0; i < strings.length; i++) {
+            copyStrings[i] = strings[i].charAt(n) + strings[i];
+        }
+
+        Arrays.sort(copyStrings);
+
+        for(int i = 0; i < copyStrings.length; i++) {
+            copyStrings[i] = copyStrings[i].substring(1, copyStrings[i].length());
+        }
+
+        return copyStrings;
+    }
+
+    public String[] practice2(String[] strings, int n) {
+        Arrays.sort(strings, (String t1, String t2) -> {
+            char c1 = t1.charAt(n);
+            char c2 = t2.charAt(n);
+
+            if(c1 == c2) {
+                return t1.compareTo(t2);
+            }
+            else {
+                return c1 - c2;
+            }
+        });
+
+        return strings;
+    }
 }

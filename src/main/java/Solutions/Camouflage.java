@@ -32,4 +32,22 @@ public class Camouflage {
 
         return answer - 1;
     }
+
+    public int practice1(String[][] clothes) {
+        int answer = 1;
+
+        Map<String, Integer> clothesMap = new HashMap<>();
+
+        for(String[] clothe : clothes) {
+            clothesMap.put(clothe[1], clothesMap.getOrDefault(clothe[1], 0) + 1);
+        }
+
+        Set<String> keySet = clothesMap.keySet();
+
+        for(String key : keySet) {
+            answer *= clothesMap.get(key) + 1;
+        }
+
+        return answer - 1;
+    }
 }

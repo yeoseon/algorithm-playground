@@ -107,4 +107,22 @@ public class CorrectBracket {
 
         return stack == 0;
     }
+
+    public boolean practice1(String s) {
+        int stack = 0;
+
+        for(char c : s.toCharArray()) {
+
+            if(c == '(') {
+                stack++;
+            }
+            else {
+                if(stack == 0) {
+                    return false;
+                }
+                stack--;
+            }
+        }
+        return stack == 0;
+    }
 }

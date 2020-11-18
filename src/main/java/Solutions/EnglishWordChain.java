@@ -1,9 +1,6 @@
 package Solutions;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * 영어 끝말잇기
@@ -202,5 +199,85 @@ public class EnglishWordChain {
         }
 
         return new int[]{0, 0};
+    }
+
+    /**
+     * [탈락 조건]
+     * 1. 기존에 말했던 단어를 말하는 경우
+     * 2. 끝난 단어로 시작되지 않는 단어를 말한 경우
+     *
+     * 그 외의 경우는 [0, 0]
+     * @param n
+     * @param words
+     * @return
+     */
+    public int[] practice1(int n, String[] words) {
+        Stack<String> wordHistory = new Stack<>();
+        List<Player_practice> playerList = new ArrayList<>();
+        Queue<String> wordQueue = new LinkedList<>();
+
+        for(String word : words) {
+            wordQueue.offer(word);
+        }
+
+        for(int i = 1; i <= n; i++) {
+            playerList.add(new Player_practice(i, 0));
+        }
+        int[] answer = new int[2];
+
+        while(!wordQueue.isEmpty()) {
+            for (Player_practice player : playerList) {
+                String word = wordQueue.poll();
+                player.addPlayCount();
+                String beforeWord = null;
+                if (!wordHistory.isEmpty()) {
+                    beforeWord = wordHistory.peek();
+                }
+                if (isWrongWord(word, wordHistory, beforeWord)) {
+                    answer[0] = player.getNumber();
+                    answer[1] = player.getPlayCount();
+
+                    return answer;
+                }
+                wordHistory.push(word);
+            }
+        }
+        return answer;
+    }
+
+    private boolean isWrongWord(String word, Stack<String> wordHistory, String beforeWord) {
+        if(beforeWord == null) {
+            return false;
+        }
+        if(wordHistory.contains(word)) {
+            return true;
+        }
+        if(word.charAt(0) != beforeWord.charAt(beforeWord.length() - 1)) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public class Player_practice {
+        int number;
+        int playCount;
+
+        public Player_practice(int number, int playCount) {
+            this.number = number;
+            this.playCount = playCount;
+        }
+
+        public void addPlayCount() {
+            playCount++;
+        }
+
+        public int getNumber() {
+            return number;
+        }
+
+        public int getPlayCount() {
+            return playCount;
+        }
     }
 }

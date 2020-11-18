@@ -62,4 +62,34 @@ public class FunctionDevelopment {
                 .toArray();
     }
 
+    public int[] practice1(int[] progresses, int[] speeds) {
+        List<Integer> answerList = new ArrayList<>();
+
+        Queue<Integer> releaseDays = new LinkedList<>();
+
+        for(int i = 0; i < progresses.length; i++) {
+
+            if(100 - progresses[i] < speeds[i]) {
+                releaseDays.add(1);
+                continue;
+            }
+            releaseDays.add((int) Math.ceil((100 - progresses[i]) / speeds[i]));
+        }
+
+        while(!releaseDays.isEmpty()) {
+            int releaseCount = 0;
+            int releaseDay = releaseDays.poll();
+            releaseCount++;
+
+            while(!releaseDays.isEmpty() && releaseDay >= releaseDays.peek()) {
+                releaseDays.remove();
+                releaseCount++;
+            }
+            answerList.add(releaseCount);
+        }
+
+        return answerList.stream()
+                .mapToInt(i -> i)
+                .toArray();
+    }
 }

@@ -12,7 +12,7 @@ public class CamouflageTest {
         String[][] clothes1 = {{"yellow_hat", "headgear"}, {"blue_sunglasses", "eyewear"}, {"green_turban", "headgear"}};
         String[][] clothes2 = {{"crow_mask", "face"}, {"blue_sunglasses", "face"}, {"smoky_makeup", "face"}};
 
-        assertThat(instance.solution1(clothes1)).isEqualTo(5);
-        assertThat(instance.solution1(clothes2)).isEqualTo(3);
+        assertThat(instance.practice1(clothes1)).isEqualTo(5);
+        assertThat(instance.practice1(clothes2)).isEqualTo(3);
     }
 }

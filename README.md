@@ -52,7 +52,7 @@ Java
 24. [2 x n 타일링](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/Tiling2xn.java) - [문제 링크](https://school.programmers.co.kr/courses/10586/lessons/67706)  
 25. [체육복](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/GymSuit.java) - [문제 링크](https://school.programmers.co.kr/courses/10586/lessons/67707)  
 26. [지뢰찾기](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/Minesweeper.java)   
-27. [3 x n 타일링](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/Tiling3xn.java) - [문제 링크](https://school.programmers.co.kr/courses/10586/lessons/67708)  
+27. [(다시풀어보기)3 x n 타일링](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/Tiling3xn.java) - [문제 링크](https://school.programmers.co.kr/courses/10586/lessons/67708)  
    
 
 XX. [팰린드롬](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/Palindrome.java) - [문제 링크](https://www.acmicpc.net/problem/1243)  

@@ -54,6 +54,7 @@ Java
 26. [지뢰찾기](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/Minesweeper.java)   
 27. [(다시풀어보기)3 x n 타일링](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/Tiling3xn.java) - [문제 링크](https://school.programmers.co.kr/courses/10586/lessons/67708)  
 28. [정수 삼각형](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/IntegerTriangle.java) - [문제 링크](https://school.programmers.co.kr/courses/10586/lessons/67709)   
+29. [도둑질](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/Thievery.java) - [문제 링크](https://school.programmers.co.kr/courses/10586/lessons/67710)  
 XX. [팰린드롬](https://github.com/yeoseon/algorithm-playground/blob/master/src/main/java/Solutions/Palindrome.java) - [문제 링크](https://www.acmicpc.net/problem/1243)  
 
 ### 개념 정리  

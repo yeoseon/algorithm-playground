@@ -74,6 +74,7 @@ public class Thievery {
      *
      * 첫번째 집을 턴 경우와 두번째 집을 턴 경우를 고려한다.
      *
+     * https://zin0-0.tistory.com/3
      * @param money
      * @return
      */
